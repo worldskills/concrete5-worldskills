@@ -30,7 +30,7 @@ foreach ($navItems as $ni) {
     echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
     echo $name;
     if ($ni->hasSubmenu) {
-        echo '<span class="caret"></span>';
+        echo ' <span class="caret"></span>';
     }
     echo '</a>';
 
