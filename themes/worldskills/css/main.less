@@ -1,0 +1,41 @@
+@import "presets/defaults.less";
+
+.toprow {
+    background-color: @toprow-background-color;
+}
+
+#header .wrap:before {
+    border-color: @header-top-color transparent transparent transparent;
+}
+
+#header .wrap:after {
+    border-color: transparent transparent transparent @header-top-color;
+}
+
+.banner-slider .item:after {
+    border-color: transparent transparent transparent fade(@header-bottom-color, 85%);
+}
+
+.promobox.promo-one figure figcaption:after {
+    border-color: transparent transparent @promo-one-color transparent;
+}
+
+.promobox.promo-two figure figcaption:after {
+    border-color: transparent transparent @promo-two-color transparent;
+}
+
+.promobox.promo-three figure figcaption:after {
+    border-color: transparent transparent @promo-three-color transparent;
+}
+
+.promobox.promo-four figure figcaption:after {
+    border-color: transparent transparent @promo-four-color transparent;
+}
+
+#footer {
+    background: @footer-background-color;
+}
+
+#footer:after {
+    border-color: transparent transparent @footer-bottom-color transparent;
+}
