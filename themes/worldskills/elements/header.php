@@ -29,6 +29,9 @@
     .banner-slider .item {
         top: 49px;
     }
+    .banner-content {
+        bottom: 493px;
+    }
     </style>
     <?php endif; ?>
 </head>
@@ -105,24 +108,37 @@
         <div class="wrap">
             <div class="banner-slider">
                 <div class="item">
+                    <figure>
+                        <?php
+                        $banner = null;
+                        if (is_object($c)) {
+                            $banner = $c->getCollectionAttributeValue('worldskills_banner');
+                        }
+                        ?>
+                        <?php if ($banner): ?>
+                            <?php
+                            $maxWidth = 1450;
+                            $maxHeight = 2000;
+                            $im = Core::make('helper/image');
+                            $thumb = $im->getThumbnail($banner, $maxWidth, $maxHeight);
+                            $tag = new \HtmlObject\Image();
+                            $tag->src($thumb->src)->width($thumb->width)->height($thumb->height);
+                            ?>
+                            <?php echo $tag; ?>
+                        <?php else: ?>
+                            <img src="<?=$this->getThemePath()?>/images/banner-pic2.jpg" width="1450" height="942">
+                        <?php endif; ?>
+                    </figure>
                     <?php
-                    $banner = null;
+                    $bannerText = null;
                     if (is_object($c)) {
-                        $banner = $c->getCollectionAttributeValue('worldskills_banner');
+                        $bannerText = $c->getCollectionAttributeValue('worldskills_banner_text');
                     }
                     ?>
-                    <?php if ($banner): ?>
-                        <?php
-                        $maxWidth = 1450;
-                        $maxHeight = 2000;
-                        $im = Core::make('helper/image');
-                        $thumb = $im->getThumbnail($banner, $maxWidth, $maxHeight);
-                        $tag = new \HtmlObject\Image();
-                        $tag->src($thumb->src)->width($thumb->width)->height($thumb->height);
-                        ?>
-                        <?php echo $tag; ?>
-                    <?php else: ?>
-                        <img src="<?=$this->getThemePath()?>/images/banner-pic2.jpg" width="1450" height="942">
+                    <?php if ($bannerText): ?>
+                        <div class="banner-content col-lg-5">
+                             <?php echo $bannerText; ?>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
