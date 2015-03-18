@@ -16,19 +16,18 @@
         <link rel="stylesheet" href="<?=$this->getThemePath()?>/css/ie.css">
     <![endif]-->
     <?php 
-    $canViewToolbar = true;
+    $canViewToolbar = false;
     if (is_object($c)) {
-        if (is_object($cp)) {
-            if ($cp->canViewToolbar()) {
-                $showLogo = false;
-            }
+        $cp = new Permissions($c);
+        if ($cp->canViewToolbar()) {
+            $canViewToolbar = true;
         }
-    }    
+    }
     ?>
     <?php if ($canViewToolbar): ?>
     <style>
-    .banner-slider .item:after {
-        top: -103px !important;
+    .banner-slider .item {
+        top: 49px;
     }
     </style>
     <?php endif; ?>
