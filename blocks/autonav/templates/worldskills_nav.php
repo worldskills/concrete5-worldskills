@@ -42,4 +42,4 @@ foreach ($navItems as $ni) {
     }
 }
 
-echo '</ul></nav>'; //closes the top-level menu
+echo '</ul>'; //closes the top-level menu
