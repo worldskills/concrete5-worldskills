@@ -13,7 +13,7 @@ class Controller extends GenericOauth2TypeController
 
     public function supportsRegistration()
     {
-        return \Config::get('auth.worldskills.registration.enabled', false);
+        return true;
     }
 
     public function getAuthenticationTypeIconHTML()
@@ -39,7 +39,6 @@ class Controller extends GenericOauth2TypeController
         \Config::save('auth.worldskills.appid', $args['apikey']);
         \Config::save('auth.worldskills.secret', $args['apisecret']);
         \Config::save('auth.worldskills.roles_application_code', $args['roles_application_code']);
-        \Config::save('auth.worldskills.registration.enabled', !!$args['registration_enabled']);
         \Config::save('auth.worldskills.registration.group', intval($args['registration_group'], 10));
     }
 

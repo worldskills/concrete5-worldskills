@@ -17,15 +17,6 @@
     <?php echo $form->label('roles_application_code', t('Roles Application Code')); ?>
     <?php echo $form->text('roles_application_code', $rolesApplicationCode); ?>
 </div>
-<div class="form-group">
-    <div class="input-group">
-        <label type="checkbox">
-            <input type="checkbox" name="registration_enabled" value="1" <?php echo \Config::get('auth.worldskills.registration.enabled', false) ? 'checked' : ''; ?>>
-            <span style="font-weight:normal"><?php echo t('Allow automatic registration'); ?></span>
-        </label>
-        </span>
-    </div>
-</div>
 <div class='form-group registration-group'>
     <label for="registration_group" class="control-label"><?php echo t('Group to enter on registration'); ?></label>
     <select name="registration_group" class="form-control">
@@ -39,18 +30,6 @@
 </div>
 
 <script type="text/javascript">
-
-    (function RegistrationGroup() {
-
-        var input = $('input[name="registration_enabled"]'),
-            group_div = $('div.registration-group');
-
-        input.change(function () {
-            input.get(0).checked && group_div.show() || group_div.hide();
-        }).change();
-
-    }());
-
     var button = $('#showsecret');
     button.click(function() {
         var apisecret = $('#apisecret');
