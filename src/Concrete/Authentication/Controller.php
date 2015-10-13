@@ -58,7 +58,7 @@ class Controller extends GenericOauth2TypeController
     {
         $user = parent::attemptAuthentication();
 
-        $userInfo = \UserInfo::getByID($user->uID);
+        $userInfo = \UserInfo::getByID($user->getUserID());
 
         $extractor = $this->getExtractor();
         $roles = $extractor->getExtra('roles');
@@ -98,6 +98,7 @@ class Controller extends GenericOauth2TypeController
             $userInfo->updateGroups($groupIds);
         }
 
-        return $user;
+        // login user again to make sure groups are reloaded
+        return \User::loginByUserID($user->getUserID());
     }
 }
