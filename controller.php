@@ -15,7 +15,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'worldskills';
     protected $appVersionRequired = '5.7.3.1';
-    protected $pkgVersion = '0.9.3';
+    protected $pkgVersion = '0.9.4';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderMapCoreExtensions = true;
 
