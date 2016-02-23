@@ -4,6 +4,10 @@ namespace Concrete\Package\Worldskills;
 use \Concrete\Core\Authentication\AuthenticationType;
 use \Concrete\Core\Package\Package;
 use \Concrete\Core\Page\Theme\Theme;
+use \Concrete\Core\Page\Type\PublishTarget\Type\AllType as PageTypePublishTargetAllType;
+use \Concrete\Core\Page\Type\PublishTarget\Configuration\AllConfiguration as PageTypePublishTargetAllConfiguration;
+use Concrete\Core\Attribute\Key\CollectionKey as CollectionAttributeKey;
+use \Concrete\Core\Attribute\Type as AttributeType;
 
 defined('C5_EXECUTE') or die("Access Denied.");
 
@@ -44,6 +48,46 @@ class Controller extends Package
         $theme = Theme::getByHandle('worldskills');
         if (!is_object($theme)) {
             $theme = Theme::add('worldskills', $pkg);
+        }
+
+        // add skill ID attribute
+        $attributeKey = CollectionAttributeKey::getByHandle('worldskills_skill_id');
+        if (!is_object($attributeKey)) {
+            $type = AttributeType::getByHandle('text');
+            $args = array(
+                'akHandle' => 'worldskills_skill_id',
+                'akName' => t('Skill ID'),
+                'akIsSearchable' => 1,
+                'akIsSearchableIndexed' => 1,
+            );
+            CollectionAttributeKey::add($type, $args, $pkg);
+        }
+
+        // add skill page type
+        $pageType = \PageType::getByHandle('worldskills_skill');
+        if (!is_object($pageType)){
+            $template = \PageTemplate::getByHandle('full');
+            \PageType::add(array(
+                'handle' => 'worldskills_skill',
+                'name' => 'Skill',
+                'defaultTemplate' => $template,
+                'allowedTemplates' => 'C',
+                'templates' => array($template),
+                'ptLaunchInComposer' => 0,
+                'ptIsFrequentlyAdded' => 0,
+            ), $pkg)->setConfiguredPageTypePublishTargetObject(new PageTypePublishTargetAllConfiguration(PageTypePublishTargetAllType::getByHandle('all')));
+        }
+
+        // add skill block
+        $blockType = \BlockType::getByHandle('worldskills_skill');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_skill', $pkg);
+        }
+
+        // add skill list block
+        $blockType = \BlockType::getByHandle('worldskills_skill_list');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_skill_list', $pkg);
         }
 
         try {
