@@ -2,7 +2,11 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 ?>
 
+<input type="hidden" name="worldskillsSkillListApiUrl" value="<?php echo h(\Config::get('worldskills.api_url')); ?>"/>
+
 <input type="hidden" name="worldskillsSkillListToolsDir" value="<?php echo Loader::helper('concrete/urls')->getBlockTypeToolsURL($bt); ?>/"/>
+
+<input type="hidden" name="worldskillsSkillListSectorId" value="<?php echo h($sectorId); ?>"/>
 
 <div class="form-group">
     <?php echo $form->label('eventId', t('Competition:')); ?>
@@ -13,6 +17,15 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <?php echo h($event['name']); ?>
                 </option>
             <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <?php echo $form->label('sectorId', t('Sector:')); ?>
+    <div class="input">
+        <select name="sectorId" id="sectorId" class="form-control">
+            <option></option>
         </select>
     </div>
 </div>

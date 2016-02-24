@@ -8,5 +8,8 @@
         <field name="eventId" type="I">
             <unsigned />
         </field>
+        <field name="sectorId" type="I">
+            <unsigned />
+        </field>
     </table>
 </schema>

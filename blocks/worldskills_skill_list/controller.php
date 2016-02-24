@@ -47,7 +47,13 @@ class Controller extends BlockController
 
         $this->set('events', $events);
     }
-    
+
+    public function save($args)
+    {
+        $args['sectorId'] = (intval($args['sectorId']) > 0) ? intval($args['sectorId']) : null;
+        parent::save($args);
+    }
+
     public function getSkills($sort = 'name_asc')
     {
         // get locale
@@ -63,13 +69,19 @@ class Controller extends BlockController
             $locale = 'en';
         }
 
-        $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
-        $url = $uh->buildQuery($url, array(
+        $params = array(
             'limit' => 100,
             'sort' => $sort,
             'l' => $locale,
-        ));
+        );
+
+        if ($this->sectorId) {
+            $params['sector'] = $this->sectorId;
+        }
+
+        $uh = \Core::make('helper/url');
+        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
+        $url = $uh->buildQuery($url, $params);
 
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
