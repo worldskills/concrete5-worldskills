@@ -2,6 +2,7 @@
 namespace Concrete\Package\WorldSkills\Block\WorldskillsSkill;
 
 use Concrete\Core\Block\BlockController;
+use Concrete\Core\Multilingual\Page\Section\Section;
 
 class Controller extends BlockController
 {
