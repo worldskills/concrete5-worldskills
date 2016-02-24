@@ -11,7 +11,8 @@ var worldskillsSkill = {
   },
   loadSkills: function() {
     var eventId = worldskillsSkill.selectEventId.val();
-    worldskillsSkill.selectSkillId.find('option').text("Loading skills...");
+    worldskillsSkill.selectSkillId.empty();
+    worldskillsSkill.selectSkillId.append('<option>Loading skills...</option>');
     if (eventId) {
       $.get(worldskillsSkill.worldskillsSkillApiUrl + '/events/' + eventId + '/skills', {limit: 100}, function (response) {
         worldskillsSkill.selectSkillId.empty();
