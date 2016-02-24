@@ -90,6 +90,12 @@ class Controller extends Package
             \BlockType::installBlockTypeFromPackage('worldskills_skill_list', $pkg);
         }
 
+        // add people block
+        $blockType = \BlockType::getByHandle('worldskills_people');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_people', $pkg);
+        }
+
         try {
             $authenticationType = AuthenticationType::getByHandle('worldskills');
         } catch (\Exception $e) {

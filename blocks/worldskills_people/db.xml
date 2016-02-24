@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+    <table name="btWorldSkillsPeople">
+        <field name="bID" type="I">
+            <key />
+            <unsigned />
+        </field>
+        <field name="typeFilter" type="C">
+            <default value="" />
+        </field>
+        <field name="eventId" type="I">
+            <unsigned />
+        </field>
+        <field name="skillId" type="I">
+            <unsigned />
+        </field>
+    </table>
+</schema>
