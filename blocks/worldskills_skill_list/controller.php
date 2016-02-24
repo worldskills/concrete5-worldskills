@@ -2,6 +2,7 @@
 namespace Concrete\Package\WorldSkills\Block\WorldskillsSkillList;
 
 use Concrete\Core\Block\BlockController;
+use Concrete\Core\Multilingual\Page\Section\Section;
 
 class Controller extends BlockController
 {
@@ -49,11 +50,25 @@ class Controller extends BlockController
     
     public function getSkills($sort = 'name_asc')
     {
+        // get locale
+        $c = $this->getCollectionObject();
+        $al = Section::getBySectionOfSite($c);
+        $locale = \Localization::activeLocale();
+        if (is_object($al)) {
+            $locale = $al->getLanguage();
+        }
+
+        // fix for sorting
+        if ($locale == 'en_US') {
+            $locale = 'en';
+        }
+
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
         $url = $uh->buildQuery($url, array(
             'limit' => 100,
             'sort' => $sort,
+            'l' => $locale,
         ));
 
         $data = \Core::make("helper/file")->getContents($url);

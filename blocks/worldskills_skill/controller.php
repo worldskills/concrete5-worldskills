@@ -46,12 +46,21 @@ class Controller extends BlockController
 
         $this->set('events', $events);
     }
-    
+
     public function getSkill()
     {
+        // get locale
+        $c = $this->getCollectionObject();
+        $al = Section::getBySectionOfSite($c);
+        $locale = \Localization::activeLocale();
+        if (is_object($al)) {
+            $locale = $al->getLanguage();
+        }
+
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events/skills/' . $this->skillId;
         $url = $uh->buildQuery($url, array(
+            'l' => $locale,
         ));
 
         $data = \Core::make("helper/file")->getContents($url);
@@ -59,7 +68,7 @@ class Controller extends BlockController
 
         return $data;
     }
-    
+
     public function view()
     {
         $skill = $this->getSkill();
