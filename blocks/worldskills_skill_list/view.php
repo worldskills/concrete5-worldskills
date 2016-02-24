@@ -41,7 +41,6 @@ $nh = \Loader::helper('navigation');
             <?php endif; ?>
 
         <?php endforeach; ?>
-
     </div>
 <?php else: ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty skill list block.')?></div>

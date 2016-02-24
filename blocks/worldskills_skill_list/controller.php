@@ -47,12 +47,13 @@ class Controller extends BlockController
         $this->set('events', $events);
     }
     
-    public function getSkills()
+    public function getSkills($sort = 'name_asc')
     {
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
         $url = $uh->buildQuery($url, array(
             'limit' => 100,
+            'sort' => $sort,
         ));
 
         $data = \Core::make("helper/file")->getContents($url);
@@ -60,10 +61,13 @@ class Controller extends BlockController
 
         return $data;
     }
-    
+
     public function view()
     {
-        $data = $this->getSkills();
+        $query = \Request::getInstance()->query;
+        $sort = $query->get('worldskills_skill_list_sort', 'name_asc');
+
+        $data = $this->getSkills($sort);
 
         $skills = $data['skills'];
 
