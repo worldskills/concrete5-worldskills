@@ -1,7 +1,7 @@
 
-<?php if (count($people['people']) > 0): ?>
+<?php if ($people->getTotalCount() > 0): ?>
 
-    <?php foreach ($people['people'] as $i => $person): ?>
+    <?php foreach ($people as $i => $person): ?>
 
         <?php if ($i % 6 == 0): ?>
            <div class="clearfix"></div>
