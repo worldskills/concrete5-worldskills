@@ -50,7 +50,7 @@ class Controller extends BlockController
 
     public function save($args)
     {
-        $args['sectorId'] = (intval($args['sectorId']) > 0) ? intval($args['sectorId']) : null;
+        $args['sectorId'] = intval($args['sectorId']);
         parent::save($args);
     }
 

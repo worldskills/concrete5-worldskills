@@ -17,6 +17,7 @@ var worldskillsPeople = {
       $.get(worldskillsPeople.apiUrl + '/events/' + eventId + '/skills', {limit: 100}, function (response) {
         worldskillsPeople.selectSkillId.empty();
         worldskillsPeople.selectSkillId.removeAttr('disabled');
+        worldskillsPeople.selectSkillId.append('<option></option>');
         $.each(response.skills, function (i, skill) {
           var option = $('<option/>');
           option.attr('value', skill.id);

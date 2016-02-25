@@ -47,26 +47,36 @@ class Controller extends BlockController
         $this->set('events', $events);
     }
 
+    public function save($args)
+    {
+        $args['skillId'] = intval($args['skillId']);
+        parent::save($args);
+    }
+
     public function getPeople()
     {
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/people';
 
+        $params = array(
+            'limit' => 100,
+        );
+
         if ($this->typeFilter == 'competitors') {
             $url .= '/competitors';
-            $url = $uh->buildQuery($url, array(
-                'skill' => $this->skillId,
-                'limit' => 100,
-            ));
         }
 
         if ($this->typeFilter == 'experts') {
             $url .= '/experts';
-            $url = $uh->buildQuery($url, array(
-                'skill' => $this->skillId,
-                'limit' => 100,
-            ));
         }
+
+        if ($this->skillId) {
+            $params['skill'] = $this->skillId;
+        } elseif ($this->eventId) {
+            $params['event'] = $this->eventId;
+        }
+
+        $url = $uh->buildQuery($url, $params);
 
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
