@@ -2,6 +2,7 @@
 namespace Concrete\Package\WorldSkills\Block\WorldskillsPeople;
 
 use Concrete\Core\Block\BlockController;
+use Concrete\Package\Worldskills\WorldSkills\Pagination\PaginatedList;
 
 class Controller extends BlockController
 {
@@ -53,14 +54,10 @@ class Controller extends BlockController
         parent::save($args);
     }
 
-    public function getPeople()
+    public function getPeople($params)
     {
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/people';
-
-        $params = array(
-            'limit' => 100,
-        );
 
         if ($this->typeFilter == 'competitors') {
             $url .= '/competitors';
@@ -68,12 +65,6 @@ class Controller extends BlockController
 
         if ($this->typeFilter == 'experts') {
             $url .= '/experts';
-        }
-
-        if ($this->skillId) {
-            $params['skill'] = $this->skillId;
-        } elseif ($this->eventId) {
-            $params['event'] = $this->eventId;
         }
 
         $url = $uh->buildQuery($url, $params);
@@ -86,7 +77,43 @@ class Controller extends BlockController
 
     public function view()
     {
-        $people = $this->getPeople();
+        $page = max(1, $this->get('page'));
+        $name = trim($this->get('worldskills_people_name'));
+        $entity = $this->get('worldskills_people_entity');
+        $skill = $this->get('worldskills_people_skill');
+
+        $limit = 54;
+        $offset = ($page - 1) * $limit;
+
+        $params = array(
+            'limit' => $limit,
+            'offset' => $offset,
+            'public_view_only' => 1,
+            'sort' => 'lastname_asc',
+        );
+        
+        if ($this->skillId) {
+            $params['skill'] = $this->skillId;
+        } elseif ($this->eventId) {
+            $params['event'] = $this->eventId;
+        }
+
+        if ($name) {
+            $params['name'] = $name;
+        }
+        if ($entity) {
+            $params['entity'] = $entity;
+        }
+        if ($skill) {
+            $params['skill'] = $skill;
+        }
+
+        $people = $this->getPeople($params);
+
+        $people = new PaginatedList($people, 'people', $limit, $page);
+        $people->addFilter('worldskills_people_name', $name);
+        $people->addFilter('worldskills_people_entity', $entity);
+        $people->addFilter('worldskills_people_skill', $skill);
 
         $this->set('people', $people);
     }
