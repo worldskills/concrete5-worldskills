@@ -65,6 +65,7 @@ class Controller extends BlockController
         $params = array(
             'limit' => 100,
             'member_of' => $this->parentId,
+            'sort' => '1058',
             'l' => $locale,
         );
 
