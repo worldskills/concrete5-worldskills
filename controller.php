@@ -15,7 +15,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'worldskills';
     protected $appVersionRequired = '5.7.3.1';
-    protected $pkgVersion = '0.9.7';
+    protected $pkgVersion = '0.9.8';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderMapCoreExtensions = true;
 
@@ -94,6 +94,12 @@ class Controller extends Package
         $blockType = \BlockType::getByHandle('worldskills_people');
         if (!is_object($blockType)) {
             \BlockType::installBlockTypeFromPackage('worldskills_people', $pkg);
+        }
+
+        // add member list block
+        $blockType = \BlockType::getByHandle('worldskills_member_list');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_member_list', $pkg);
         }
 
         try {

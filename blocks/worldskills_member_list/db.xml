@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+    <table name="btWorldSkillsMemberList">
+        <field name="bID" type="I">
+            <key />
+            <unsigned />
+        </field>
+        <field name="parentId" type="I">
+            <unsigned />
+        </field>
+    </table>
+</schema>
