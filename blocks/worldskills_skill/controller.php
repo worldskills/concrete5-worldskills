@@ -21,6 +21,22 @@ class Controller extends BlockController
         return t('Name and description of skill');
     }
 
+    public function getSearchableContent()
+    {
+        $content = array();
+
+        $skill = $this->getSkill();
+
+        if (isset($skill['name']['text'])) {
+            $content[] = $skill['name']['text'];
+        }
+        if (isset($skill['description']['text']) && $skill['description']['text']) {
+            $content[] = $skill['description']['text'];
+        }
+
+		return implode(' ', $content);
+    }
+
     public function edit()
     {
         $this->form();
@@ -33,6 +49,7 @@ class Controller extends BlockController
     
     protected function form()
     {
+        // fetch all competitions
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events';
         $url = $uh->buildQuery($url, array(
@@ -58,12 +75,14 @@ class Controller extends BlockController
             $locale = $al->getLanguage();
         }
 
+        // build URL with params
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills/' . $this->skillId;
         $url = $uh->buildQuery($url, array(
             'l' => $locale,
         ));
 
+        // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
 

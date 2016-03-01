@@ -21,6 +21,27 @@ class Controller extends BlockController
         return t('List of WorldSkills Members');
     }
 
+    public function getSearchableContent()
+    {
+        $content = array();
+
+        $members = $this->getMembers();
+
+        if (isset($members['members'])) {
+
+            foreach ($members['members'] as $member) {
+
+                $content[] = $member['name']['text'];
+
+                if (isset($member['organization']['name']['text']) && $member['organization']['name']['text']) {
+                    $content[] = $member['organization']['name']['text'];
+                }
+            }
+        }
+
+		return implode(' ', $content);
+    }
+
     public function edit()
     {
         $this->form();
@@ -33,6 +54,7 @@ class Controller extends BlockController
     
     protected function form()
     {
+        // get all Members for dropdown
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/org/members';
         $url = $uh->buildQuery($url, array(
@@ -69,10 +91,12 @@ class Controller extends BlockController
             'l' => $locale,
         );
 
+        // build URL with params
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/org/members';
         $url = $uh->buildQuery($url, $params);
 
+        // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
 
@@ -81,7 +105,7 @@ class Controller extends BlockController
 
     public function view()
     {
-        $data = $this->getMembers($sort);
+        $data = $this->getMembers();
 
         $members = $data['members'];
 

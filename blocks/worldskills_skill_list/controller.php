@@ -21,6 +21,25 @@ class Controller extends BlockController
         return t('List of skills');
     }
 
+    public function getSearchableContent()
+    {
+        $content = array();
+
+        $skills = $this->getSkills();
+
+        if (isset($skills['skills'])) {
+
+            foreach ($skills['skills'] as $skill) {
+
+                if (isset($skill['name']['text'])) {
+                    $content[] = $skill['name']['text'];
+                }
+            }
+        }
+
+		return implode(' ', $content);
+    }
+
     public function edit()
     {
         $this->form();
@@ -33,6 +52,7 @@ class Controller extends BlockController
     
     protected function form()
     {
+        // fetch all competitions
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events';
         $url = $uh->buildQuery($url, array(
@@ -50,6 +70,7 @@ class Controller extends BlockController
 
     public function save($args)
     {
+        // convert to int
         $args['sectorId'] = intval($args['sectorId']);
         parent::save($args);
     }
@@ -69,20 +90,24 @@ class Controller extends BlockController
             $locale = 'en';
         }
 
+        // defaults
         $params = array(
             'limit' => 100,
             'sort' => $sort,
             'l' => $locale,
         );
 
+        // block settings
         if ($this->sectorId) {
             $params['sector'] = $this->sectorId;
         }
 
+        // build URL with params
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
         $url = $uh->buildQuery($url, $params);
 
+        // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
 

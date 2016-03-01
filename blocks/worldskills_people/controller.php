@@ -21,6 +21,34 @@ class Controller extends BlockController
         return t('Show Competitors or Experts');
     }
 
+    public function getSearchableContent()
+    {
+        $content = array();
+
+        // get all people
+        $params = array(
+            'limit' => 999,
+            'public_view_only' => 1,
+        );
+        if ($this->skillId) {
+            $params['skill'] = $this->skillId;
+        } elseif ($this->eventId) {
+            $params['event'] = $this->eventId;
+        }
+        $people = $this->getPeople($params);
+
+        if (isset($people['people'])) {
+
+            foreach ($people['people'] as $person) {
+
+                $content[] = $person['first_name'];
+                $content[] = $person['last_name'];
+            }
+        }
+
+		return implode(' ', $content);
+    }
+
     public function edit()
     {
         $this->form();
@@ -59,16 +87,20 @@ class Controller extends BlockController
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/people';
 
+        // Competitors resource
         if ($this->typeFilter == 'competitors') {
             $url .= '/competitors';
         }
 
+        // Experts resource
         if ($this->typeFilter == 'experts') {
             $url .= '/experts';
         }
 
+        // build URL with params
         $url = $uh->buildQuery($url, $params);
 
+        // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
 
@@ -77,11 +109,13 @@ class Controller extends BlockController
 
     public function view()
     {
+        // $_GET user defined params
         $page = max(1, $this->get('page'));
         $name = trim($this->get('worldskills_people_name'));
         $entity = $this->get('worldskills_people_entity');
         $skill = $this->get('worldskills_people_skill');
 
+        // defaults
         $limit = 54;
         $offset = ($page - 1) * $limit;
 
@@ -91,13 +125,15 @@ class Controller extends BlockController
             'public_view_only' => 1,
             'sort' => 'lastname_asc',
         );
-        
+
+        // block settings
         if ($this->skillId) {
             $params['skill'] = $this->skillId;
         } elseif ($this->eventId) {
             $params['event'] = $this->eventId;
         }
 
+        // user defined params
         if ($name) {
             $params['name'] = $name;
         }
@@ -108,8 +144,10 @@ class Controller extends BlockController
             $params['skill'] = $skill;
         }
 
+        // get people
         $people = $this->getPeople($params);
 
+        // convert to paginated list
         $people = new PaginatedList($people, 'people', $limit, $page);
         $people->addFilter('worldskills_people_name', $name);
         $people->addFilter('worldskills_people_entity', $entity);
