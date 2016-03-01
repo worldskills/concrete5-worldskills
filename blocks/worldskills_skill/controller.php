@@ -59,7 +59,7 @@ class Controller extends BlockController
         }
 
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events/skills/' . $this->skillId;
+        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills/' . $this->skillId;
         $url = $uh->buildQuery($url, array(
             'l' => $locale,
         ));
