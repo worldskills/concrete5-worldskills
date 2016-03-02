@@ -78,6 +78,19 @@ class Controller extends Package
             ), $pkg)->setConfiguredPageTypePublishTargetObject(new PageTypePublishTargetAllConfiguration(PageTypePublishTargetAllType::getByHandle('all')));
         }
 
+        // add member ID attribute
+        $attributeKey = CollectionAttributeKey::getByHandle('worldskills_member_id');
+        if (!is_object($attributeKey)) {
+            $type = AttributeType::getByHandle('text');
+            $args = array(
+                'akHandle' => 'worldskills_member_id',
+                'akName' => t('Member ID'),
+                'akIsSearchable' => 1,
+                'akIsSearchableIndexed' => 1,
+            );
+            CollectionAttributeKey::add($type, $args, $pkg);
+        }
+
         // add member page type
         $pageType = \PageType::getByHandle('worldskills_member');
         if (!is_object($pageType)){
