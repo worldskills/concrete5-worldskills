@@ -96,6 +96,12 @@ class Controller extends Package
             \BlockType::installBlockTypeFromPackage('worldskills_people', $pkg);
         }
 
+        // add member block
+        $blockType = \BlockType::getByHandle('worldskills_member');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_member', $pkg);
+        }
+
         // add member list block
         $blockType = \BlockType::getByHandle('worldskills_member_list');
         if (!is_object($blockType)) {
