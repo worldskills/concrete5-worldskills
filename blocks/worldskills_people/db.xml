@@ -14,5 +14,8 @@
         <field name="skillId" type="I">
             <unsigned />
         </field>
+        <field name="entityId" type="I">
+            <unsigned />
+        </field>
     </table>
 </schema>

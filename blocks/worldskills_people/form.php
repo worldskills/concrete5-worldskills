@@ -41,6 +41,20 @@ defined('C5_EXECUTE') or die("Access Denied.");
     </div>
 </div>
 
+<div class="form-group">
+    <?php echo $form->label('entityId', t('Member:')); ?>
+    <div class="input">
+        <select name="entityId" id="entityId" class="form-control">
+            <option></option>
+            <?php foreach ($members as $member): ?>
+                <option value="<?php echo h($member['ws_entity']['id']); ?>"<?php if ($entityId == $member['ws_entity']['id']) { echo ' selected="selected"'; } ?>>
+                    <?php echo h($member['name']['text']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+
 <script>
 Concrete.event.publish('worldskillspeople.edit.open');
 </script>

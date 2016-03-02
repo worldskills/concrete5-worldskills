@@ -35,6 +35,9 @@ class Controller extends BlockController
         } elseif ($this->eventId) {
             $params['event'] = $this->eventId;
         }
+        if ($this->entityId) {
+            $params['entity'] = $this->entityId;
+        }
         $people = $this->getPeople($params);
 
         if (isset($people['people'])) {
@@ -61,6 +64,7 @@ class Controller extends BlockController
     
     protected function form()
     {
+        // get all Events for dropdown
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/events';
         $url = $uh->buildQuery($url, array(
@@ -73,7 +77,21 @@ class Controller extends BlockController
 
         $events = $data['events'];
 
+        // get all Members for dropdown
+        $uh = \Core::make('helper/url');
+        $url = \Config::get('worldskills.api_url') . '/org/members';
+        $url = $uh->buildQuery($url, array(
+            'limit' => 100,
+        ));
+
+        $data = \Core::make("helper/file")->getContents($url);
+        $data = json_decode($data, true);
+
+        $members = $data['members'];
+
+        // set form data
         $this->set('events', $events);
+        $this->set('members', $members);
     }
 
     public function save($args)
@@ -131,6 +149,9 @@ class Controller extends BlockController
             $params['skill'] = $this->skillId;
         } elseif ($this->eventId) {
             $params['event'] = $this->eventId;
+        }
+        if ($this->entityId) {
+            $params['entity'] = $this->entityId;
         }
 
         // user defined params
