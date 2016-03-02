@@ -12,13 +12,35 @@ $nh = \Loader::helper('navigation');
                </div>
             <?php endif; ?>
 
+            <?php
+            $url = '';
+            $page = Page::getCurrentPage();
+            $pageList = new PageList();
+            $pageList->filterByParentID($page->getCollectionId());
+            $pageList->filterByAttribute('worldskills_member_id', $member['id']);
+            $pages = $pageList->get(1);
+            if (is_array($pages) && isset($pages[0])) {
+                $url = $nh->getLinkToCollection($pages[0]);
+            }
+            ?>
+
             <div class="col-sm-2">
-                <p>
-                    <?php if (isset($member['flag']) && $member['flag']): ?>
-                        <img src="<?php echo h($member['flag']['thumbnail']); ?>_small" class="img-responsive" alt="" style="border: 1px solid #ddd; max-height: 84px;">
-                    <?php endif; ?>
-                    <?php echo h($member['name']['text']); ?>
-                </p>
+                <?php if ($url): ?>
+                    <a href="<?php echo h($url); ?>" class="thumbnail">
+                <?php else: ?>
+                    <div class="thumbnail">
+                <?php endif; ?>
+                <?php if (isset($member['flag']) && $member['flag']): ?>
+                    <img src="<?php echo h($member['flag']['thumbnail']); ?>_small" class="img-responsive" alt="" style="border: 1px solid #ddd; max-height: 84px;">
+                <?php endif; ?>
+                <div class="caption">
+                    <h5><?php echo h($member['name']['text']); ?></h5>
+                </div>
+                <?php if ($url): ?>
+                    </a>
+                <?php else: ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
         <?php endforeach; ?>
