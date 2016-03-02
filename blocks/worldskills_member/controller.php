@@ -56,9 +56,9 @@ class Controller extends BlockController
         $data = \Core::make("helper/file")->getContents($url);
         $data = json_decode($data, true);
 
-        $events = $data['members'];
+        $members = $data['members'];
 
-        $this->set('members', $events);
+        $this->set('members', $members);
     }
 
     public function getMember()
