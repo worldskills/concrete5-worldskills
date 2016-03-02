@@ -78,6 +78,21 @@ class Controller extends Package
             ), $pkg)->setConfiguredPageTypePublishTargetObject(new PageTypePublishTargetAllConfiguration(PageTypePublishTargetAllType::getByHandle('all')));
         }
 
+        // add member page type
+        $pageType = \PageType::getByHandle('worldskills_member');
+        if (!is_object($pageType)){
+            $template = \PageTemplate::getByHandle('full');
+            \PageType::add(array(
+                'handle' => 'worldskills_member',
+                'name' => 'Member',
+                'defaultTemplate' => $template,
+                'allowedTemplates' => 'C',
+                'templates' => array($template),
+                'ptLaunchInComposer' => 0,
+                'ptIsFrequentlyAdded' => 0,
+            ), $pkg)->setConfiguredPageTypePublishTargetObject(new PageTypePublishTargetAllConfiguration(PageTypePublishTargetAllType::getByHandle('all')));
+        }
+
         // add skill block
         $blockType = \BlockType::getByHandle('worldskills_skill');
         if (!is_object($blockType)) {
