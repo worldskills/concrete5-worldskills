@@ -72,6 +72,14 @@ class Controller extends BlockController
     {
         // convert to int
         $args['sectorId'] = intval($args['sectorId']);
+
+        // convert to string
+        if (is_array($args['types'])) {
+            $args['types'] = implode(',', $args['types']);
+        } else {
+            $args['types'] = '';
+        }
+
         parent::save($args);
     }
 
@@ -92,15 +100,23 @@ class Controller extends BlockController
             'l' => $language,
         );
 
+        // build URL with params
+        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
+        $url .= '?';
+        $url .= http_build_query($params);
+
         // block settings
         if ($this->sectorId) {
-            $params['sector'] = $this->sectorId;
+            $url .= '&';
+            $url .= http_build_query(array('sector' => $this->sectorId));
         }
-
-        // build URL with params
-        $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills';
-        $url = $uh->buildQuery($url, $params);
+        if ($this->types) {
+            $skillTypes = explode(',', $this->types);
+            foreach ($skillTypes as $skillType) {
+                $url .= '&';
+                $url .= http_build_query(array('type' => $skillType));
+            }
+        }
 
         // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);

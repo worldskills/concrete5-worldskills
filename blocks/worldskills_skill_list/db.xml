@@ -11,5 +11,8 @@
         <field name="sectorId" type="I">
             <unsigned />
         </field>
+        <field name="types" type="C">
+            <default value="" />
+        </field>
     </table>
 </schema>

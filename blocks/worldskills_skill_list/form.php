@@ -30,6 +30,21 @@ defined('C5_EXECUTE') or die("Access Denied.");
     </div>
 </div>
 
+<?php
+$skillTypes = array(
+    'official' => t('Official Skill'),
+    'demo' => t('Demonstration Skill'),
+    'presentation' => t('Presentation Skill'),
+    'multi' => t('Multi Skill'),
+    'possible_official' => t('Possible Official Skill'),
+    'proposed_demo' => t('Proposed Demonstration Skill'),
+);
+?>
+<div class="form-group">
+    <?php echo $form->label('types', t('Types:')); ?>
+    <?php echo $form->selectMultiple('types', $skillTypes, explode(',', $types))?>
+</div>
+
 <?php if (isset($b)): ?>
     <h2>
         <legend><?php echo t('Skill sub pages') ?></legend>
