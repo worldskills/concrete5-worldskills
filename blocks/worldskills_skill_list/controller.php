@@ -85,19 +85,24 @@ class Controller extends BlockController
 
     public function getSkills($sort = 'name_asc')
     {
-        // get language
+        // get locale
         $c = $this->getCollectionObject();
         $al = Section::getBySectionOfSite($c);
-        $language = \Localization::activeLanguage();
+        $locale = \Localization::activeLocale();
         if (is_object($al)) {
-            $language = $al->getLanguage();
+            $locale = $al->getLocale();
+        }
+
+        // fix for sorting
+        if ($locale == 'en_US') {
+            $locale = 'en';
         }
 
         // defaults
         $params = array(
             'limit' => 100,
             'sort' => $sort,
-            'l' => $language,
+            'l' => $locale,
         );
 
         // build URL with params

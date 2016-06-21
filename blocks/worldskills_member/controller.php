@@ -63,19 +63,19 @@ class Controller extends BlockController
 
     public function getMember()
     {
-        // get language
+        // get locale
         $c = $this->getCollectionObject();
         $al = Section::getBySectionOfSite($c);
-        $language = \Localization::activeLanguage();
+        $locale = \Localization::activeLocale();
         if (is_object($al)) {
-            $language = $al->getLanguage();
+            $locale = $al->getLocale();
         }
 
         // build URL with params
         $uh = \Core::make('helper/url');
         $url = \Config::get('worldskills.api_url') . '/org/members/' . $this->memberId;
         $url = $uh->buildQuery($url, array(
-            'l' => $language,
+            'l' => $locale,
         ));
 
         // fetch JSON

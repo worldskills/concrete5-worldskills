@@ -71,19 +71,24 @@ class Controller extends BlockController
 
     public function getMembers()
     {
-        // get language
+        // get locale
         $c = $this->getCollectionObject();
         $al = Section::getBySectionOfSite($c);
-        $language = \Localization::activeLanguage();
+        $locale = \Localization::activeLocale();
         if (is_object($al)) {
-            $language = $al->getLanguage();
+            $locale = $al->getLocale();
+        }
+
+        // fix for sorting
+        if ($locale == 'en_US') {
+            $locale = 'en';
         }
 
         $params = array(
             'limit' => 100,
             'member_of' => $this->parentId,
             'sort' => '1058',
-            'l' => $language,
+            'l' => $locale,
         );
 
         // build URL with params
