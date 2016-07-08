@@ -47,6 +47,15 @@ foreach ($skills['skills'] as $skill) {
             'cHandle' => $slug,
         );
         $page = $parentPage->add($pageType, $data, $template);
+
+    } else {
+
+        // update page title
+        $data = array(
+            'cName' => $name,
+        );
+        $page->update($data);
+
     }
 
     $page->setAttribute('exclude_nav', true);
