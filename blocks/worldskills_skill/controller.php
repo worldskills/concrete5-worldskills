@@ -68,11 +68,13 @@ class Controller extends BlockController
     public function getSkill()
     {
         // get locale
-        $c = $this->getCollectionObject();
-        $al = Section::getBySectionOfSite($c);
         $locale = \Localization::activeLocale();
-        if (is_object($al)) {
-            $locale = $al->getLocale();
+        $c = $this->getCollectionObject();
+        if (is_object($c)) {
+            $al = Section::getBySectionOfSite($c);
+            if (is_object($al)) {
+                $locale = $al->getLocale();
+            }
         }
 
         // build URL with params
