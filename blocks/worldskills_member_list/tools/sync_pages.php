@@ -32,7 +32,7 @@ foreach ($members['members'] as $member) {
     // try to load existing page
     $pageList = new PageList();
     $pageList->filterByParentID($parentPage->getCollectionId());
-    $pageList->filterByAttribute('worldskills_member_id', $skillId);
+    $pageList->filterByAttribute('worldskills_member_id', $memberId);
     $pages = $pageList->get(1);
     if (is_array($pages) && isset($pages[0])) {
         $page = $pages[0];
