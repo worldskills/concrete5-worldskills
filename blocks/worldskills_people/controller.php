@@ -66,7 +66,7 @@ class Controller extends BlockController
     {
         // get all Events for dropdown
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events';
         $url = $uh->buildQuery($url, array(
             'type' => 'competition',
             'limit' => 100,
@@ -79,7 +79,7 @@ class Controller extends BlockController
 
         // get all Members for dropdown
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/org/members';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/org/members';
         $url = $uh->buildQuery($url, array(
             'limit' => 100,
         ));
@@ -103,7 +103,7 @@ class Controller extends BlockController
     public function getPeople($params)
     {
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/people';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/people';
 
         // Competitors resource
         if ($this->typeFilter == 'competitors') {

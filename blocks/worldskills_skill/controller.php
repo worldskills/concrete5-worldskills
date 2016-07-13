@@ -51,7 +51,7 @@ class Controller extends BlockController
     {
         // fetch all competitions
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events';
         $url = $uh->buildQuery($url, array(
             'type' => 'competition',
             'limit' => 100,
@@ -79,7 +79,7 @@ class Controller extends BlockController
 
         // build URL with params
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/events/' . $this->eventId . '/skills/' . $this->skillId;
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events/' . $this->eventId . '/skills/' . $this->skillId;
         $url = $uh->buildQuery($url, array(
             'l' => $locale,
         ));

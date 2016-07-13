@@ -17,7 +17,7 @@ class Service extends AbstractService
 
     public function getAccessTokenEndpoint()
     {
-        $uri = \Config::get('worldskills.api_url') . '/auth/access_token';
+        $uri = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/auth/access_token';
         return new Uri($uri);
     }
 

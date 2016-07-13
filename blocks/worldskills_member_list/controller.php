@@ -56,7 +56,7 @@ class Controller extends BlockController
     {
         // get all Members for dropdown
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/org/members';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/org/members';
         $url = $uh->buildQuery($url, array(
             'limit' => 100,
         ));
@@ -95,7 +95,7 @@ class Controller extends BlockController
 
         // build URL with params
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url') . '/org/members';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/org/members';
         $url = $uh->buildQuery($url, $params);
 
         // fetch JSON

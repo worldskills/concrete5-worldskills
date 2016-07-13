@@ -2,7 +2,7 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 ?>
 
-<input type="hidden" name="worldskillsSkillListApiUrl" value="<?php echo h(\Config::get('worldskills.api_url')); ?>"/>
+<input type="hidden" name="worldskillsSkillListApiUrl" value="<?php echo h(\Config::get('worldskills.api_url', 'https://api.worldskills.org')); ?>"/>
 
 <input type="hidden" name="worldskillsSkillListToolsDir" value="<?php echo Loader::helper('concrete/urls')->getBlockTypeToolsURL($bt); ?>/"/>
 
