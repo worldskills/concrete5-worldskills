@@ -11,7 +11,7 @@ class Service extends AbstractService
 {
     public function getAuthorizationEndpoint()
     {
-        $uri = \Config::get('worldskills.authorize_url') . '/oauth/authorize';
+        $uri = \Config::get('worldskills.authorize_url', 'https://auth.worldskills.org') . '/oauth/authorize';
         return new Uri($uri);
     }
 

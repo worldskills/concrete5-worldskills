@@ -10,7 +10,7 @@ class Worldskills extends DashboardPageController
     public function view($strStatus = false)
     {
         $this->set('apiUrl', \Config::get('worldskills.api_url', 'https://api.worldskills.org'));
-        $this->set('authorizeUrl', \Config::get('worldskills.authorize_url'));
+        $this->set('authorizeUrl', \Config::get('worldskills.authorize_url', 'https://auth.worldskills.org'));
 
         if ($strStatus == 'saved')
         {
