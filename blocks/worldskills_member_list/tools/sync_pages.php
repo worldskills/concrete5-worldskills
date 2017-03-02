@@ -8,12 +8,14 @@ if (!ini_get('safe_mode')) {
 $text = \Loader::helper('text');
 
 $bID = isset($_POST['bID']) ? $_POST['bID'] : '';
+$cID = isset($_POST['cID']) ? $_POST['cID'] : '';
+$arHandle = isset($_POST['arHandle']) ? $_POST['arHandle'] : '';
 
-$block = \Block::getByID($bID);
+$c = \Page::getByID($cID);
+$a = \Area::get($c, $arHandle);
+$block = \Block::getByID($bID, $c, $a);
 
 $controller = $block->getInstance();
-
-$parentPage = $block->getBlockCollectionObject();
 
 $pageType = \PageType::getByHandle('worldskills_member');
 $template = \PageTemplate::getByHandle('full');
@@ -31,7 +33,7 @@ foreach ($members['members'] as $member) {
 
     // try to load existing page
     $pageList = new PageList();
-    $pageList->filterByParentID($parentPage->getCollectionId());
+    $pageList->filterByParentID($c->getCollectionId());
     $pageList->filterByAttribute('worldskills_member_id', $memberId);
     $pages = $pageList->get(1);
     if (is_array($pages) && isset($pages[0])) {
@@ -46,7 +48,7 @@ foreach ($members['members'] as $member) {
             'cDescription' => '',
             'cHandle' => $slug,
         );
-        $page = $parentPage->add($pageType, $data, $template);
+        $page = $c->add($pageType, $data, $template);
 
     } else {
 

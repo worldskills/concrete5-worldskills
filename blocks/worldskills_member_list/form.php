@@ -24,6 +24,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
     <div class="form-group">
         <input type="hidden" name="worldskillsMemberListbID" value="<?php echo $b->getBlockID(); ?>" />
+        <input type="hidden" name="worldskillsMemberListcID" value="<?php echo $b->getBlockCollectionObject()->getCollectionID(); ?>" />
+        <input type="hidden" name="worldskillsMemberListarHandle" value="<?php echo $b->getAreaHandle(); ?>" />
         <input type="button" name="worldskillsMemberListSyncPages" value="<?php echo t('Synchronize pages'); ?>" class="btn btn-success" />
     </div>
     <p id="worldskillsMemberListStatus"></p>
