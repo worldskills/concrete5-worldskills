@@ -52,6 +52,8 @@ $skillTypes = array(
 
     <div class="form-group">
         <input type="hidden" name="worldskillsSkillListbID" value="<?php echo $b->getBlockID(); ?>" />
+        <input type="hidden" name="worldskillsSkillListcID" value="<?php echo $b->getBlockCollectionObject()->getCollectionID(); ?>" />
+        <input type="hidden" name="worldskillsSkillListarHandle" value="<?php echo $b->getAreaHandle(); ?>" />
         <input type="button" name="worldskillsSkillListSyncPages" value="<?php echo t('Synchronize pages'); ?>" class="btn btn-success" />
     </div>
     <p id="worldskillsSkillListStatus"></p>

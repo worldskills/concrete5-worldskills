@@ -39,7 +39,9 @@ var worldskillsSkillList = {
   },
   syncPages: function() {
     var bID = $('input[name=worldskillsSkillListbID]').val();
-    $.post(worldskillsSkillList.toolsDir + 'sync_pages', {bID: bID}, function (response) {
+    var cID = $('input[name=worldskillsSkillListcID]').val();
+    var arHandle = $('input[name=worldskillsSkillListarHandle]').val();
+    $.post(worldskillsSkillList.toolsDir + 'sync_pages', {bID: bID, cID: cID, arHandle: arHandle}, function (response) {
       worldskillsSkillList.status.text(response.skills.length + '/' + response.total_count + ' pages synced');
       worldskillsSkillList.btnSyncPages.val('Synchronize pages');
       worldskillsSkillList.btnSyncPages.removeAttr('disabled');
