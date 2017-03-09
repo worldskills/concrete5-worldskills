@@ -38,6 +38,8 @@ $skillTypes = array(
     'multi' => t('Multi Skill'),
     'possible_official' => t('Possible Official Skill'),
     'proposed_demo' => t('Proposed Demonstration Skill'),
+    'exhibition' => t('Exhibition Skill'),
+    'host_member' => t('Host Member Skill'),
 );
 ?>
 <div class="form-group">
