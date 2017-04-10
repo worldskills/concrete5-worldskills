@@ -14,7 +14,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <link rel="stylesheet" href="<?=$this->getThemePath()?>/css/ie.css">
     <![endif]-->
-    <?php 
+    <?php
     $canViewToolbar = false;
     if (is_object($c)) {
         $cp = new Permissions($c);
@@ -109,36 +109,20 @@
                 <div class="item">
                     <figure>
                         <?php
-                        $banner = null;
-                        if (is_object($c)) {
-                            $banner = $c->getCollectionAttributeValue('worldskills_banner');
+                        $a = new Area('Header image');
+                        if ($a->getTotalBlocksInArea($c) > 0 || $c->isEditMode()) {
+                          $a->display();
+                        } else {
+                          echo '<img class="img-responsive" src="' . $this->getThemePath() . '/images/banner-pic2.jpg" width="1450" height="942">';
                         }
                         ?>
-                        <?php if ($banner): ?>
-                            <?php
-                            $maxWidth = 1450;
-                            $maxHeight = 2000;
-                            $im = Core::make('helper/image');
-                            $thumb = $im->getThumbnail($banner, $maxWidth, $maxHeight);
-                            $tag = new \HtmlObject\Image();
-                            $tag->src($thumb->src)->width($thumb->width)->height($thumb->height);
-                            ?>
-                            <?php echo $tag; ?>
-                        <?php else: ?>
-                            <img src="<?=$this->getThemePath()?>/images/banner-pic2.jpg" width="1450" height="942">
-                        <?php endif; ?>
                     </figure>
-                    <?php
-                    $bannerText = null;
-                    if (is_object($c)) {
-                        $bannerText = $c->getCollectionAttributeValue('worldskills_banner_text');
-                    }
-                    ?>
-                    <?php if ($bannerText): ?>
-                        <div class="banner-content col-lg-5">
-                             <?php echo $bannerText; ?>
-                        </div>
-                    <?php endif; ?>
+                    <div class="banner-content col-lg-5">
+                        <?php
+                        $a = new Area('Header banner text');
+                        $a->display($c);
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

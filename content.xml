@@ -3,10 +3,6 @@
     <themes>
         <theme handle="worldskills" package="worldskills" activated="1" />
     </themes>
-    <attributekeys>
-        <attributekey handle="worldskills_banner" name="Banner" package="" searchable="0" indexed="0" type="image_file" category="collection"/>
-        <attributekey handle="worldskills_banner_text" name="Banner Text" package="" searchable="0" indexed="0" type="textarea" category="collection"/>
-    </attributekeys>
     <pagetemplates>
         <pagetemplate handle="left_sidebar" name="Left Sidebar" icon="left_sidebar.png" package="worldskills" />
         <pagetemplate handle="full" name="Full" icon="full.png" package="worldskills" />
@@ -213,14 +209,6 @@
     <pages>
         <page name="Home" path="" filename="" pagetype="" template="homepage" user="admin" description="" package="">
             <attributes>
-                <attributekey handle="worldskills_banner">
-                    <value>
-                        <fID>{ccm:export:file:banner-pic.jpg}</fID>
-                    </value>
-                </attributekey>
-                <attributekey handle="worldskills_banner_text">
-                    <value><![CDATA[We are <span>looking</span> for the<br> next <span>WorldSkills</span> Champions]]></value>
-                </attributekey>
                 <attributekey handle="exclude_nav">
                     <value>0</value>
                 </attributekey>

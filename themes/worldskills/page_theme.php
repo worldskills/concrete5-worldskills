@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Concrete\Package\Worldskills\Theme\Worldskills;
 
@@ -6,25 +6,25 @@ use Concrete\Core\Page\Theme\Theme;
 
 class PageTheme extends Theme
 {
-	public function registerAssets()
-	{
+    public function registerAssets()
+    {
         $this->requireAsset('css', 'font-awesome');
         $this->providesAsset('css', 'bootstrap/*');
-       	$this->requireAsset('javascript', 'jquery');
+        $this->requireAsset('javascript', 'jquery');
         $this->providesAsset('javascript', 'bootstrap/*');
-	}
+    }
 
-   	protected $pThemeGridFrameworkHandle = 'bootstrap3';
+    protected $pThemeGridFrameworkHandle = 'bootstrap3';
 
     public function getThemeBlockClasses()
     {
-		return array(
-		    'image' => array(
+        return array(
+            'image' => array(
                 'promo-one',
                 'promo-two',
                 'promo-three',
                 'promo-four',
-		    ),
+            ),
         );
     }
 
@@ -33,14 +33,18 @@ class PageTheme extends Theme
     }
 
     public function getThemeDefaultBlockTemplates()
-    {	       
+    {
+       return array(
+           'file' => 'download',
+       );
     }
 
     public function getThemeEditorClasses()
     {
         return array(
             array('title' => t('Page Title'), 'menuClass' => 'page-title', 'spanClass' => 'page-title'),
-			array('title' => t('Lead'), 'menuClass' => 'lead', 'spanClass' => 'lead'),
+            array('title' => t('Button'), 'menuClass' => 'btn-menu', 'spanClass' => 'button', 'forceBlock' => 1),
+            array('title' => t('Lead'), 'menuClass' => 'lead', 'spanClass' => 'lead'),
         );
     }
 }
