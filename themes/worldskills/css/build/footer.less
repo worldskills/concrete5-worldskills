@@ -1,0 +1,85 @@
+#footer {
+  background:@footer-background-color;
+  position:relative;
+  color:#fff;
+  padding:40px 0;
+  z-index:2;
+  &:after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 114px 231px;
+    border-color: transparent transparent @footer-bottom-color transparent;
+    content:'';
+    position:absolute;
+    right:0;
+    bottom:0;
+    -moz-transform:scale(.9999);
+  }
+  h1,h2,h3,h4,h5 {
+    color:@footer-bottom-color;
+  }
+  a {
+    &:hover {
+      color:footer-bottom-color;
+    }
+  }
+  .copyright {
+    padding:30px 0 0 0;
+  }
+  .copyright hr {
+    margin:10px 15px 30px;
+  }
+  .backtotop {
+    float:right;
+  }
+  .backtotop:after {
+     width:23px;
+     height:15px;
+     background-position:0 -146px;
+   }
+  .backtotop:hover:after {
+    background-position:-24px -146px;
+  }
+  h4 {
+    text-transform:uppercase;
+    font-size:17px;
+    margin:0 0 15px;
+  }
+  .fmenu ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .fmenu ul li {
+    line-height:1.2;
+    padding:2px 0;
+  }
+  .fmenu ul li a, .copyright a {
+    color:#fff;
+  }
+  .fmenu ul li a:hover, .fmenu ul li a.active, .fmenu ul li a:focus, .copyright a:hover, .copyright a.active, .copyright a:focus, .aboutblock a:hover, .aboutblock a:focus  {
+    color:#c4d600;
+    text-decoration:none;
+  }
+  .aboutblock  {
+    p {
+      padding-right:70px;
+      margin-bottom:10px;
+    }
+    a {
+      color:#fff;
+      font-size:14px;
+    }
+  }
+  .social li a.sp-before:before { width:16px; height:16px; }
+  .social li a.fb:before { background-position:0 -21px; }
+  .social li a.fb:hover:before { background-position:-19px -21px; }
+  .social li a.tw:before { background-position:0 -40px; }
+  .social li a.tw:hover:before { background-position:-19px -40px; }
+  .social li a.ist:before { background-position:0 -59px; }
+  .social li a.ist:hover:before { background-position:-19px -59px; }
+  .social li a.yt:before { background-position:0 -79px; }
+  .social li a.yt:hover:before { background-position:-19px -79px; }
+
+}

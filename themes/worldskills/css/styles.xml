@@ -6,6 +6,9 @@
     <set name="Header">
         <style name="Top Cutout Color" variable="header-top" type="color" />
         <style name="Bottom Cutout Color" variable="header-bottom" type="color" />
+        <style name="Header Triangle One Color" variable="header-triangle-one" type="color" />
+        <style name="Header Triangle Two Color" variable="header-triangle-two" type="color" />
+        <style name="Header Triangle Three Color" variable="header-triangle-three" type="color" />
     </set>
     <set name="Footer">
         <style name="Background" variable="footer-background" type="color" />
