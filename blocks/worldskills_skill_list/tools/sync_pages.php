@@ -13,7 +13,7 @@ $arHandle = isset($_POST['arHandle']) ? $_POST['arHandle'] : '';
 
 $c = \Page::getByID($cID);
 $a = \Area::get($c, $arHandle);
-$block = \Block::getByID($bID);
+$block = \Block::getByID($bID, $c, $a);
 
 $controller = $block->getInstance();
 
