@@ -45,7 +45,7 @@ var worldskillsSkillList = {
       worldskillsSkillList.status.text(response.skills.length + '/' + response.total_count + ' pages synced');
       worldskillsSkillList.btnSyncPages.val('Synchronize pages');
       worldskillsSkillList.btnSyncPages.removeAttr('disabled');
-    });
+    }, 'json');
   }
 }
 Concrete.event.bind('worldskillsskilllist.edit.open', function() {

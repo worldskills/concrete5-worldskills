@@ -18,7 +18,7 @@ var worldskillsMemberList = {
       worldskillsMemberList.status.text(response.members.length + '/' + response.total_count + ' pages synced');
       worldskillsMemberList.btnSyncPages.val('Synchronize pages');
       worldskillsMemberList.btnSyncPages.removeAttr('disabled');
-    });
+    }, 'json');
   }
 }
 Concrete.event.bind('worldskillsmemberlist.edit.open', function() {
