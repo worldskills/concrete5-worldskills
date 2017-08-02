@@ -10,10 +10,7 @@ class Controller extends BlockController
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 400;
     protected $btDefaultSet = 'worldskills';
-    protected $btCacheBlockOutput = true;
-    protected $btCacheBlockOutputOnPost = true;
-    protected $btCacheBlockOutputForRegisteredUsers = true;
-    protected $btCacheBlockOutputLifetime = 3600; // 1h
+    protected $btCacheBlockOutput = false;
 
     public function getBlockTypeName()
     {
