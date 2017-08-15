@@ -18,7 +18,9 @@ class ServiceProvider extends \Concrete\Core\Foundation\Service\Provider
         $factory = $this->app->make('oauth/factory/service');
         $factory->registerService('worldskills', '\\Concrete\\Package\\Worldskills\\Authentication\\Service');
 
-        $this->app->bindShared('authentication/worldskills', function ($app, $callback = '/ccm/system/authentication/oauth2/worldskills/callback/') use ($factory) {
+        $this->app->bindShared('authentication/worldskills', function () use ($factory) {
+
+            $callback = '/ccm/system/authentication/oauth2/worldskills/callback/';
 
             $credentials = new Credentials(\Config::get('auth.worldskills.appid'), \Config::get('auth.worldskills.secret'), (string) \URL::to($callback));
 
