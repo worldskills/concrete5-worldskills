@@ -1,5 +1,5 @@
 
-<?php if ($skill): ?>
+<?php if ($skill && isset($skill['name'])): ?>
 
     <?php foreach ($skill['photos'] as $photo): ?>
         <img src="<?php echo h($photo['thumbnail']); ?>_small" class="img-responsive" alt="">
