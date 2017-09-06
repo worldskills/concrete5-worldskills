@@ -69,6 +69,12 @@ class Controller extends BlockController
         $this->set('events', $events);
     }
 
+    public function save($args)
+    {
+        $args['skillId'] = intval($args['skillId']);
+        parent::save($args);
+    }
+
     public function getSkill()
     {
         // get locale

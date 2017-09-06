@@ -98,6 +98,7 @@ class Controller extends BlockController
     public function save($args)
     {
         $args['skillId'] = intval($args['skillId']);
+        $args['entityId'] = intval($args['entityId']);
         parent::save($args);
     }
 
