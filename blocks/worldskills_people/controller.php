@@ -136,7 +136,7 @@ class Controller extends BlockController
         $skill = $this->get('worldskills_people_skill');
 
         // defaults
-        $limit = 54;
+        $limit = 100;
         $offset = ($page - 1) * $limit;
 
         $params = array(
