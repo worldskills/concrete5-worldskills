@@ -136,6 +136,12 @@ class Controller extends Package
             \BlockType::installBlockTypeFromPackage('worldskills_member_list', $pkg);
         }
 
+        // add results block
+        $blockType = \BlockType::getByHandle('worldskills_results');
+        if (!is_object($blockType)) {
+            \BlockType::installBlockTypeFromPackage('worldskills_results', $pkg);
+        }
+
         try {
             $authenticationType = AuthenticationType::getByHandle('worldskills');
         } catch (\Exception $e) {
