@@ -78,7 +78,7 @@ class Controller extends BlockController
         );
 
         // build URL with params
-        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events/' . $this->eventId . '/skills';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events/' . $this->eventId . '/skills?type=official&type=demo&type=host_member';
         $url .= '?';
         $url .= http_build_query($params);
 
