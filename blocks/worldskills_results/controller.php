@@ -92,7 +92,7 @@ class Controller extends BlockController
     public function getResults()
     {
         // build URL with params
-        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/results/events/' . $this->eventId;
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/results/events/' . $this->eventId . '?medal=GOLD&medal=SILVER&medal=BRONZE';
 
         // fetch JSON
         $data = \Core::make("helper/file")->getContents($url);
