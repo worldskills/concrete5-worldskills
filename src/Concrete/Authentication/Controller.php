@@ -54,6 +54,22 @@ class Controller extends GenericOauth2TypeController
         $this->set('groups', $list->getResults());
     }
 
+    public function getWorldSkillsAccessToken()
+    {
+        $service = $this->getService();
+        $serviceClass = $service->service();
+        $storage = $service->getStorage();
+
+        if ($storage->hasAccessToken($serviceClass)) {
+
+            $token = $storage->retrieveAccessToken($serviceClass);
+
+            return $token->getAccessToken();
+        }
+
+        return null;
+    }
+
     protected function attemptAuthentication()
     {
         $user = parent::attemptAuthentication();
