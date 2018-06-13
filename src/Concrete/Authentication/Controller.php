@@ -117,4 +117,11 @@ class Controller extends GenericOauth2TypeController
         // login user again to make sure groups are reloaded
         return \User::loginByUserID($user->getUserID());
     }
+
+    public function completeAuthentication(User $u)
+    {
+        $c = \Page::getByPath('/login');
+        $controller = $c->getPageController();
+        return $controller->finishAuthentication($this->getAuthenticationType(), $u);
+    }
 }
