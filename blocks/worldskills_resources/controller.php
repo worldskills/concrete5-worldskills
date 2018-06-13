@@ -139,7 +139,7 @@ class Controller extends BlockController
         $args['type'] = intval($args['type']);
         $args['entityId'] = intval($args['entityId']);
 
-        if (count($entities) > 0) {
+        if (is_array($entities) && count($entities) > 0) {
             foreach ($entities as $entity) {
                 if ($entity['id'] == $args['entityId']) {
                     $args['entityName'] = $entity['name']['text'];
