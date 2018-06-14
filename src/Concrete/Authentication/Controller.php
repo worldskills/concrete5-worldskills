@@ -3,6 +3,7 @@
 namespace Concrete\Package\Worldskills\Authentication;
 
 use Concrete\Core\Authentication\Type\OAuth\OAuth2\GenericOauth2TypeController;
+use Concrete\Core\User\User;
 
 class Controller extends GenericOauth2TypeController
 {
