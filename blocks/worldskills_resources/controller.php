@@ -123,6 +123,12 @@ class Controller extends BlockController
 
         // send request
         $response = $client->send();
+
+        // check for error
+        if ($response->isClientError()) {
+            return array();
+        }
+
         // parse response
         $body = $response->getBody();
         $data = json_decode($body, true);
