@@ -14,7 +14,7 @@ $form = Loader::helper('form');
                 <?php
                 $found = false;
                 ?>
-                <?php if (count($entities) > 0): ?>
+                <?php if (is_array($entities) && count($entities) > 0): ?>
                     <?php foreach ($entities as $e): ?>
                         <option value="<?php echo h($e['id']); ?>"<?php if ($entityId == $e['id']) { $found = true; echo ' selected="selected"'; } ?>>
                             <?php echo h($e['name']['text']); ?>
@@ -45,7 +45,7 @@ $form = Loader::helper('form');
         <div class="input">
             <select name="type" id="typeId" class="form-control">
                 <option value=""<?php if (!$type) { echo ' selected="selected"'; } ?>></option>
-                <?php if (count($resourceTypes) > 0): ?>
+                <?php if (is_array($resourceTypes) && count($resourceTypes) > 0): ?>
                     <?php foreach ($resourceTypes as $resourceType): ?>
                         <option value="<?php echo h($resourceType['id']); ?>"<?php if ($type == $resourceType['id']) { echo ' selected="selected"'; } ?>>
                             <?php echo h($resourceType['name']); ?>
