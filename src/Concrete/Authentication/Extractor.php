@@ -20,7 +20,6 @@ class Extractor extends LazyExtractor
             self::FIELD_FIRST_NAME,
             self::FIELD_LAST_NAME,
             self::FIELD_UNIQUE_ID,
-            self::FIELD_USERNAME,
             self::FIELD_EXTRA,
         );
     }
@@ -32,7 +31,6 @@ class Extractor extends LazyExtractor
             self::FIELD_FIRST_NAME => 'firstName',
             self::FIELD_LAST_NAME => 'lastName',
             self::FIELD_UNIQUE_ID => 'id',
-            self::FIELD_USERNAME => 'username',
             self::FIELD_EXTRA => 'extra',
         );
     }
@@ -55,11 +53,6 @@ class Extractor extends LazyExtractor
     public function lastNameNormalizer($data)
     {
         return isset($data['last_name']) ? $data['last_name'] : null;
-    }
-
-    public function usernameNormalizer($data)
-    {
-        return isset($data['username']) ? $data['username'] : null;
     }
 
     public function profileLoader()
