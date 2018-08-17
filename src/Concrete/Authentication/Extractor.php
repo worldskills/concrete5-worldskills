@@ -31,7 +31,6 @@ class Extractor extends LazyExtractor
             self::FIELD_FIRST_NAME => 'firstName',
             self::FIELD_LAST_NAME => 'lastName',
             self::FIELD_UNIQUE_ID => 'id',
-            self::FIELD_EXTRA => 'extra',
         );
     }
 
