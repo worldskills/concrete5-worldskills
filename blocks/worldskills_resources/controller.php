@@ -105,11 +105,18 @@ class Controller extends BlockController
 
         $tags = explode(',', $this->tags);
         foreach ($tags as $tag) {
-            $queryString .= '&tags=' . rawurlencode(trim($tag));
+            $tag = trim($tag);
+            if ($tag) {
+                $queryString .= '&tags=' . rawurlencode($tag);
+            }
         }
 
         if ($this->type) {
             $queryString .= '&type=' . $this->type;
+        }
+
+        if ($this->sort) {
+            $queryString .= '&sort=' . $this->sort;
         }
 
         $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/resources' . $queryString;

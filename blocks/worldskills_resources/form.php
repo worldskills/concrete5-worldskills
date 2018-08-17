@@ -35,6 +35,21 @@ $form = Loader::helper('form');
         </div>
     </div>
 
+    <div class="form-group">
+        <?php echo $form->label('sort', t('Sort')); ?>
+        <div class="input">
+            <select name="sort" id="sort" class="form-control">
+                <option value=""<?php if (!$sort) { echo ' selected="selected"'; } ?>></option>
+                <option value="name"<?php if ($sort == 'name') { echo ' selected="selected"'; } ?>>By Name</option>
+                <option value="name_desc"<?php if ($sort == 'name_desc') { echo ' selected="selected"'; } ?>>By Name Descending</option>
+                <option value="v_date"<?php if ($sort == 'v_date') { echo ' selected="selected"'; } ?>>By Version Date</option>
+                <option value="v_date_desc"<?php if ($sort == 'v_date_desc') { echo ' selected="selected"'; } ?>>By Version Date Descending</option>
+                <option value="v_mod_date"<?php if ($sort == 'v_mod_date') { echo ' selected="selected"'; } ?>>By Modified Date</option>
+                <option value="v_mod_date_desc"<?php if ($sort == 'v_mod_date_desc') { echo ' selected="selected"'; } ?>>By Modified Date Descending</option>
+            </select>
+        </div>
+    </div>
+
 </fieldset>
 
 <fieldset>
