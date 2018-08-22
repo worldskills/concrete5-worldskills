@@ -1,55 +1,64 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
 
-	<footer id="footer">
-    	<div class="wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                        <?php
-                        $a = new GlobalArea('Footer Site Title');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 footernavblock">
-                        <?php
-                        $a = new GlobalArea('Footer Navigation');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 footernavblock">
-                        <?php
-                        $a = new GlobalArea('Footer Contact');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 footernavblock">
-                        <?php
-                        $a = new GlobalArea('Footer Social');
-                        $a->display();
-                        ?>
-                    </div>
+    </main>
+
+    <footer class="ws-page-footer">
+        <div class="container">
+            <div class="ws-page-footer-row">
+                <aside class="ws-page-footer-col-sm">
+                    <?php
+                    $a = new GlobalArea('Footer Site Title');
+                    $a->display();
+                    ?>
+                </aside>
+                <aside class="ws-page-footer-col-sm">
+                    <?php
+                    $a = new GlobalArea('Footer Navigation');
+                    $a->display();
+                    ?>
+                </aside>
+                <aside class="ws-page-footer-col-sm">
+                    <?php
+                    $a = new GlobalArea('Footer Contact');
+                    $a->display();
+                    ?>
+                </aside>
+                <aside class="ws-page-footer-col-sm">
+                    <?php
+                    $a = new GlobalArea('Footer Social');
+                    $a->display();
+                    ?>
+                </aside>
+                <aside class="ws-page-footer-col-md">
+                    <?php
+                    $a = new GlobalArea('Footer Search');
+                    $a->setCustomTemplate('search', 'worldskills_footer.php');
+                    $a->display();
+                    ?>
+                </aside>
+            </div>
+            <div class="ws-page-footer-row">
+                <div class="ws-page-footer-col-lg">
+                    <?php
+                    $a = new GlobalArea('Footer Copyright');
+                    $a->display();
+                    ?>
                 </div>
-                <div class="row copyright">
-                    <hr>
-                    <div class="col-lg-9 col-md-12">
-                        <?php
-                        $a = new GlobalArea('Footer Legal');
-                        $a->display();
-                        ?>
-                    </div>
-                    <div class="col-lg-3 col-md-12">
-                        <a href="#" class="backtotop sp-after">Back to top</a>
-                    </div>
+                <div class="ws-page-footer-col-lg">
+                    <p class="text-md-right">
+                        <?php echo Core::make('helper/navigation')->getLogInOutLink(); ?>
+                    </p>
                 </div>
             </div>
         </div>
-	</footer>
+    </footer>
+
 </div>
 
-<script src="<?=$this->getThemePath()?>/js/bootstrap.min.js"></script>
-<script src="<?=$this->getThemePath()?>/js/general.js"></script>
-
 <?php Loader::element('footer_required'); ?>
+
+<?php echo $html->javascript($this->getThemePath() . '/js/popper.js/popper.min.js'); ?>
+<?php echo $html->javascript($this->getThemePath() . '/js/bootstrap/bootstrap.min.js'); ?>
 
 </body>
 </html>

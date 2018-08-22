@@ -1,129 +1,42 @@
 <?php defined('C5_EXECUTE') or die("Access Denied."); ?>
 <!DOCTYPE html>
-<html lang="<?=Localization::activeLanguage()?>">
+<html lang="<?php echo Localization::activeLanguage(); ?>">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" type="text/css" href="<?=$this->getThemePath()?>/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=$this->getThemePath()?>/css/site.css">
-    <?=$html->css($view->getStylesheet('main.less'))?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="origin">
+
+    <?php echo $html->css($this->getThemePath() . '/css/bootstrap/bootstrap.min.css'); ?>
+    <?php echo $html->css($view->getStylesheet('main.less')); ?>
+
     <?php Loader::element('header_required', array('pageTitle' => $pageTitle)); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 10]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <link rel="stylesheet" href="<?=$this->getThemePath()?>/css/ie.css">
-    <![endif]-->
-    <?php
-    $canViewToolbar = false;
-    if (is_object($c)) {
-        $cp = new Permissions($c);
-        if ($cp->canViewToolbar()) {
-            $canViewToolbar = true;
-        }
-    }
-    ?>
-    <?php if ($canViewToolbar): ?>
-    <style>
-    .banner-slider .item {
-        top: 49px;
-    }
-    .banner-content {
-        bottom: 493px;
-    }
-    </style>
-    <?php endif; ?>
 </head>
 <body>
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-<div id="wrapper" class="<?=$c->getPageWrapperClass()?> <?=(isset($pageBannerClass) ? h($pageBannerClass) : '')?>">
+    <div class="<?php echo $c->getPageWrapperClass()?>">
 
-    <div class="header-block">
-        <div class="toprow">
-            <div class="wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <?php
-                            $a = new GlobalArea('Header Member');
-                            $a->display($c);
-                            ?>
-                        </div>
-                        <div class="col-xs-6 language-nav">
-                            <?php
-                            $a = new GlobalArea('Header Language');
-                            $a->display($c);
-                            ?>
-                        </div>
-                    </div>
-                </div>
+        <?php
+        $a = new GlobalArea('Header Stripe');
+        $a->setCustomTemplate('image', 'worldskills_navbar_stripe.php');
+        $a->disableControls();
+        $a->display();
+        ?>
+
+        <nav class="navbar navbar-expand-md ws-navbar-main">
+            <div class="container">
+                <?php
+                $a = new GlobalArea('Header Site Title');
+                $a->setCustomTemplate('image', 'worldskills_navbar_brand.php');
+                $a->display();
+                ?>
+                <?php
+                $a = new GlobalArea('Header Navigation');
+                $a->setCustomTemplate('autonav', 'worldskills_nav.php');
+                $a->display();
+                ?>
             </div>
-        </div>
-        <header id="header">
-            <div class="wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                            <div id="logo">
-                                <?php
-                                $a = new GlobalArea('Header Site Title');
-                                $a->display();
-                                ?>
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8">
-                            <div class="row">
-                                <div class="col-lg-12 ">
-                                    <?php
-                                    $a = new GlobalArea('Header Search');
-                                    $a->display();
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 navouterbox">
-                                    <a href="#" class="searchicon sprites"></a>
-                                    <button data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                                        <span class="site-navbar-toggle-label">Menu</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <div id="navbar" class="navbar-collapse collapse">
-                                        <?php
-                                        $a = new GlobalArea('Header Navigation');
-                                        $a->display();
-                                        ?>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </div>
-    <div class="main-banner">
-        <div class="wrap">
-            <div class="banner-slider">
-                <div class="item">
-                    <figure>
-                        <?php
-                        $a = new Area('Header image');
-                        if ($a->getTotalBlocksInArea($c) > 0 || $c->isEditMode()) {
-                          $a->display();
-                        } else {
-                          echo '<img class="img-responsive" src="' . $this->getThemePath() . '/images/banner-pic2.jpg" width="1450" height="942">';
-                        }
-                        ?>
-                    </figure>
-                    <div class="banner-content col-lg-5">
-                        <?php
-                        $a = new Area('Header banner text');
-                        $a->display($c);
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </nav>
+
+        <main id="content">

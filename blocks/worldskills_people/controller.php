@@ -6,6 +6,10 @@ use Concrete\Package\Worldskills\WorldSkills\Pagination\PaginatedList;
 
 class Controller extends BlockController
 {
+    const BASE_POSITION_COMPETITOR = 'Competitor';
+
+    const BASE_POSITION_EXPERT = 'Expert';
+
     protected $btTable = 'btWorldSkillsPeople';
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 400;
@@ -177,5 +181,7 @@ class Controller extends BlockController
         $people->addFilter('worldskills_people_skill', $skill);
 
         $this->set('people', $people);
+        $this->set('basePositionCompetitor', self::BASE_POSITION_COMPETITOR);
+        $this->set('basePositionExpert', self::BASE_POSITION_EXPERT);
     }
 }

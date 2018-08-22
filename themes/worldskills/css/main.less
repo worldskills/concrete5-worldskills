@@ -1,46 +1,19 @@
-/* Import bootstrap 3 mixins and variables so we can use them */
-@import "build/bootstrap-3.2.0/variables.less";
-@import "build/bootstrap-3.2.0/mixins.less";
-
-/* Import core mixins so we can use them */
-@import "../../../../../concrete/css/build/core/include/mixins.less";
-
 @import "presets/defaults.less";
 
-@import "build/body.less";
-
-.ccm-page {
-  @import "build/header.less";
-  @import "build/footer.less";
-  @import "build/content.less";
-
-  @import "build/miscellaneous-styles.less";
+div.ccm-panel-content ul.nav,
+div.ccm-panel-content menu {
+  display:block;
 }
 
-.banner-slider .item:after {
-    border-color: transparent transparent transparent fade(@header-bottom-color, 85%);
+#ccm-theme-grid-edit-mode-row-wrapper {
+  display: flex;
+  width: 100%;
 }
 
-.promobox.promo-one figure figcaption:after {
-    border-color: transparent transparent @promo-one-color transparent;
+.ws-navbar-main {
+  background-color: @header-background-color;
 }
 
-.promobox.promo-two figure figcaption:after {
-    border-color: transparent transparent @promo-two-color transparent;
-}
-
-.promobox.promo-three figure figcaption:after {
-    border-color: transparent transparent @promo-three-color transparent;
-}
-
-.promobox.promo-four figure figcaption:after {
-    border-color: transparent transparent @promo-four-color transparent;
-}
-
-#footer {
-    background: @footer-background-color;
-}
-
-#footer:after {
-    border-color: transparent transparent @footer-bottom-color transparent;
+.ws-page-footer {
+  background-color: @footer-background-color;
 }

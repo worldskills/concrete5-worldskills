@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@worldskills/bootstrap": "github:worldskills/bootstrap#master",
+    "popper.js": "^1.14.4"
+  },
+  "scripts": {
+    "css": "npm run css-copy",
+    "css-copy": "cp -r node_modules/@worldskills/bootstrap/dist/css/ themes/worldskills/css/bootstrap/",
+    "js": "npm run js-copy",
+    "js-copy": "cp -r node_modules/@worldskills/bootstrap/dist/js/ themes/worldskills/js/bootstrap/ && cp -r node_modules/popper.js/dist/umd/ themes/worldskills/js/popper.js/",
+    "dist": "npm run css && npm run js"
+  }
+}

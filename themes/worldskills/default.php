@@ -1,26 +1,27 @@
+<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+
+<?php $this->inc('elements/header.php'); ?>
+
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
-$this->inc('elements/header.php', array('pageBannerClass' => 'page-small-banner'));
+$a = new Area('Page Header');
+$a->enableGridContainer();
+$a->setCustomTemplate('image', 'worldskills_hero.php');
+$a->setCustomTemplate('feature', 'worldskills_hero_purple.php');
+$a->display($c);
 ?>
 
-<div id="main">
-	<div class="wrap">
-    	<div class="container">
-    	   <div>
-                <?php
-                $a = new GlobalArea('Breadcrumb');
-                $a->display();
-                ?>
-            </div>
-            <div>
-                <?php
-                $a = new Area('Main');
-                $a->setAreaGridMaximumColumns(12);
-                $a->display($c);
-                ?>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+$a = new GlobalArea('Breadcrumb');
+$a->disableControls();
+$a->enableGridContainer();
+$a->setCustomTemplate('autonav', 'worldskills_breadcrumb.php');
+$a->display($c);
+?>
+
+<?php
+$a = new Area('Main');
+$a->enableGridContainer();
+$a->display($c);
+?>
 
 <?php $this->inc('elements/footer.php'); ?>

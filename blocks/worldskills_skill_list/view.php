@@ -3,7 +3,7 @@ $nh = \Loader::helper('navigation');
 ?>
 
 <?php if (count($skills) > 0): ?>
-    <div class="row">
+    <ul class="row list-unstyled mt-4" id="js-tag-filter-list">
         <?php foreach ($skills as $i => $skill): ?>
             <?php
             $url = '';
@@ -16,32 +16,33 @@ $nh = \Loader::helper('navigation');
                 $url = $nh->getLinkToCollection($pages[0]);
             }
             ?>
-            <div class="col-md-3">
+
+            <li class="col-sm-6 col-md-3 ws-imglink">
                 <?php if ($url): ?>
-                    <a href="<?php echo h($url); ?>" class="thumbnail">
-                <?php else: ?>
-                    <div class="thumbnail">
+                    <a href="<?php echo h($url); ?>">
                 <?php endif; ?>
                 <?php foreach ($skill['photos'] as $photo): ?>
-                    <img src="<?php echo h($photo['thumbnail']); ?>_small" class="img-responsive" alt="">
+                    <img src="<?php echo h($photo['thumbnail']); ?>_small" class="ws-imglink-img" alt="">
                     <?php break; ?>
                 <?php endforeach; ?>
-                <div class="caption">
-                    <h5><?php echo h($skill['name']['text']); ?></h5>
-                </div>
+                <h1 class="ws-imglink-title">
+                    <?php echo h($skill['name']['text']); ?>
+                </h1>
                 <?php if ($url): ?>
                     </a>
-                <?php else: ?>
-                    </div>
                 <?php endif; ?>
-            </div>
-
-            <?php if ($i % 4 == 3): ?>
-               <div class="clearfix"></div>
-            <?php endif; ?>
+                <p class="ws-imglink-desc">
+                    <?php if (is_array($skill['sector'])): ?>
+                        <?php foreach ($skill['sector'] as $sector): ?>
+                            <?php echo h($skill['sector']['name']['text']); ?>
+                            <?php break; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </p>
+            </li>
 
         <?php endforeach; ?>
-    </div>
+    </ul>
 <?php else: ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty skill list block.')?></div>
 <?php endif; ?>

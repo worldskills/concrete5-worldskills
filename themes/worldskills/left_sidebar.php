@@ -1,36 +1,46 @@
+<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+
+<?php $this->inc('elements/header.php'); ?>
+
 <?php
-defined('C5_EXECUTE') or die("Access Denied.");
-$this->inc('elements/header.php', array('pageBannerClass' => 'page-small-banner'));
+$a = new Area('Page Header');
+$a->enableGridContainer();
+$a->setCustomTemplate('image', 'worldskills_hero.php');
+$a->setCustomTemplate('feature', 'worldskills_hero_purple.php');
+$a->display($c);
 ?>
 
-<div id="main">
-	<div class="wrap">
-    	<div class="container">
-            <div class="row">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <?php
-                    $a = new GlobalArea('Breadcrumb');
-                    $a->display();
-                    ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-9 col-sm-push-3 col-md-9 col-md-push-3">
-                    <?php
-                    $a = new Area('Main');
-                    $a->setAreaGridMaximumColumns(9);
-                    $a->display($c);
-                    ?>
-                </div>
-                <div class="col-sm-3 col-sm-pull-9 col-md-3 sidebar" role="navigation">
-                    <?php
-                    $a = new GlobalArea('Sidebar');
-                    $a->display();
-                    ?>
-                </div>
-            </div>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-9 order-md-2">
+
+            <?php
+            $a = new GlobalArea('Breadcrumb');
+            $a->disableControls();
+            $a->setCustomTemplate('autonav', 'worldskills_breadcrumb.php');
+            $a->display($c);
+            ?>
+
+            <?php
+            $a = new Area('Main');
+            $a->setAreaGridMaximumColumns(12);
+            $a->display($c);
+            ?>
         </div>
+
+        <hr class="visible-xs visible-sm" />
+
+        <div class="col-md-3 order-md-1 hidden-print" role="navigation">
+            <?php
+            $a = new GlobalArea('Sidebar');
+            $a->display($c);
+            ?>
+        </div>
+
     </div>
+
 </div>
 
-<?php  $this->inc('elements/footer.php'); ?>
+<?php $this->inc('elements/footer.php'); ?>

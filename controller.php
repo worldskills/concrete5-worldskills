@@ -167,7 +167,14 @@ class Controller extends Package
     public function on_start()
     {
         $app = \Core::make('app');
+
         $provider = new \Concrete\Package\Worldskills\Authentication\ServiceProvider($app);
         $provider->register();
+
+        // grid framework
+        $manager = $app->make('manager/grid_framework');
+        $manager->extend('bootstrap4', function($app) {
+            return new \Concrete\Package\Worldskills\GridFramework\Bootstrap4();
+        });
     }
 }

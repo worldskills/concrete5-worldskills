@@ -1,23 +1,9 @@
 <?xml version="1.0"?>
 <styles version="1.0">
-    <set name="Top Row">
-        <style name="Background" variable="toprow-background" type="color" />
-    </set>
     <set name="Header">
-        <style name="Top Cutout Color" variable="header-top" type="color" />
-        <style name="Bottom Cutout Color" variable="header-bottom" type="color" />
-        <style name="Header Triangle One Color" variable="header-triangle-one" type="color" />
-        <style name="Header Triangle Two Color" variable="header-triangle-two" type="color" />
-        <style name="Header Triangle Three Color" variable="header-triangle-three" type="color" />
+        <style name="Background" variable="header-background" type="color" />
     </set>
     <set name="Footer">
         <style name="Background" variable="footer-background" type="color" />
-        <style name="Cutout Color" variable="footer-bottom" type="color" />
-    </set>
-    <set name="Promotion Boxes">
-        <style name="Promo 1" variable="promo-one" type="color" />
-        <style name="Promo 2" variable="promo-two" type="color" />
-        <style name="Promo 3" variable="promo-three" type="color" />
-        <style name="Promo 4" variable="promo-four" type="color" />
     </set>
 </styles>

@@ -32,7 +32,7 @@
         ?>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <p>
                     <?php echo h($skill['name']['text']); ?>
                 </p>
@@ -42,7 +42,7 @@
             $skillTag = 'Skill ' . $skill['number'];
             ?>
 
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <?php foreach($resources as $resource): ?>
                     <?php
                     $found = false;

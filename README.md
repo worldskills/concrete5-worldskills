@@ -17,6 +17,4 @@ A concrete5 add-on/package that includes the WorldSkills theme for Member websit
 
 ### Customization
 
-- The banner photo and text can be changed for each page with the [Attributes](http://www.concrete5.org/documentation/using-concrete5-7/in-page-editing/the-toolbar/page-edit-drop-down/attributes/) *Banner* and *Banner Text* (HTML) in the Page Settings.
-
 - Colours can be changed by customizing the Theme in the [Design setting](http://www.concrete5.org/documentation/using-concrete5-7/in-page-editing/the-toolbar/page-edit-drop-down/design/).
