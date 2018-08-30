@@ -410,7 +410,7 @@
                     <block type="search" name="" custom-template="worldskills_footer.php">
                         <data table="btSearch">
                             <record>
-                                <title><![CDATA[Begin typing…]]></title>
+                                <title><![CDATA[Search]]></title>
                                 <buttonText><![CDATA[Search]]></buttonText>
                                 <baseSearchPath />
                                 <postTo_cID />
