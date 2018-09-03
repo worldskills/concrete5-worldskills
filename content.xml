@@ -16,6 +16,11 @@
         <thumbnailtype name="Landscape" handle="landscape" sizingMode="exact" width="1280" height="960" upscalingEnabled="1" />
         <thumbnailtype name="Wide" handle="wide" sizingMode="exact" width="1280" height="576" upscalingEnabled="1" />
     </thumbnailtypes>
+    <attributekeys>
+        <attributekey handle="worldskills_dates" name="Dates" package="worldskills" searchable="1" indexed="1" type="text" category="collection">
+            <type placeholder="e.g. 22 – 27 August 2019" />
+        </attributekey>
+    </attributekeys>
     <pagetypes>
         <pagetype name="Page" handle="page" package="" launch-in-composer="1" is-frequently-added="1">
             <pagetemplates type="all" default="full" />
