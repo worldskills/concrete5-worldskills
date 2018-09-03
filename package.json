@@ -8,6 +8,8 @@
     "css-copy": "cp -r node_modules/@worldskills/bootstrap/dist/css/ themes/worldskills/css/bootstrap/",
     "js": "npm run js-copy",
     "js-copy": "cp -r node_modules/@worldskills/bootstrap/dist/js/ themes/worldskills/js/bootstrap/ && cp -r node_modules/popper.js/dist/umd/ themes/worldskills/js/popper.js/",
-    "dist": "npm run css && npm run js"
+    "img": "npm run img-copy",
+    "img-copy": "cp -r node_modules/@worldskills/bootstrap/dist/img/ themes/worldskills/css/img/",
+    "dist": "npm run css && npm run js && npm run img"
   }
 }
