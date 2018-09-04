@@ -45,7 +45,9 @@ if ($company) {
     <figure class="ws-pullquote">
         <blockquote><?php echo h($paragraph); ?></blockquote>
         <figcaption>
-            — <?php echo implode(', ', $author); ?>
+            <?php if (count($author) > 0): ?>
+                — <?php echo implode(', ', $author); ?>
+            <?php endif; ?>
         </figcaption>
     </figure>
 <?php endif; ?>
