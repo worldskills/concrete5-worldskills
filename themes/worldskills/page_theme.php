@@ -42,6 +42,7 @@ class PageTheme extends Theme
     {
        return array(
            'content' => 'worldskills_content.php',
+           'image' => 'worldskills_fluid.php',
        );
     }
 
