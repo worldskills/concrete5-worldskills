@@ -4,6 +4,8 @@
 // This optionally accepts:
 // $feature_color, like 'orange' or 'purple'.
 
+$thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('medium');
+
 $classes = array();
 
 if ($feature_color) {
@@ -37,6 +39,24 @@ if ($company) {
         <?php endif; ?>
         <figcaption>
             — <?php echo implode(', ', $author); ?>
+            <?php if ($fID): ?>
+                <?php
+                $f = \File::getByID($fID);
+                ?>
+                <?php if (is_object($f) && $f->getFileID()): ?>
+                    <?php
+                    if (is_object($thumbnailType)) {
+                        $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
+                    } else {
+                        $src = $f->getRelativePath();
+                        if (!$src) {
+                            $src = $f->getURL();
+                        }
+                    }
+                    ?>
+                    <img src="<?php echo h($src); ?>" alt="" role="presentation">
+                <?php endif; ?>
+            <?php endif; ?>
         </figcaption>
     </figure>
 </section>
