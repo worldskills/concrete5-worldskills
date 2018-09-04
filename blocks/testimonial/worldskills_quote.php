@@ -1,10 +1,8 @@
 <?php
-// Feature Quote block.
-// Very similar to standard Feature block, but a different semantic HTML structure.
+// Quote block.
 
 // This optionally accepts:
 // $feature_color, like 'orange' or 'purple'.
-
 
 $classes = array();
 
@@ -13,31 +11,32 @@ if ($feature_color) {
 }
 
 $class = implode(' ', $classes);
+
+$author = array();
+if ($name) {
+    $author[] = h($name);
+}
+if ($position) {
+    $author[] = h($position);
+}
+if ($company) {
+    $author[] = h($company);
+}
 ?>
 
 <section class="ws-block ws-feature ws-feature-quote ws-feature-quote-1 <?=$class?>">
     <figure class="ws-feature-inner">
-        <?php
-        if ($title) {
-        ?>
+        <?php if ($paragraph): ?>
             <blockquote class="ws-feature-title">
-                <?php if ($linkURL): ?>
-                    <a href="<?=$linkURL?>"><?=$title?></a>
+                <?php if ($companyURL): ?>
+                    <a href="<?php echo h($companyURL); ?>"><?php echo h($paragraph); ?></a>
                 <?php else: ?>
-                    <?=$title?>
+                    <?php echo h($paragraph); ?>
                 <?php endif; ?>
             </blockquote>
-        <?php
-        }
-        ?>
+        <?php endif; ?>
         <figcaption>
-            <?php
-            if ($paragraph) {
-                ?>
-                <?=$paragraph?>
-            <?php
-            }
-            ?>
+            — <?php echo implode(', ', $author); ?>
         </figcaption>
     </figure>
 </section>
