@@ -12,6 +12,14 @@ if ($feature_color) {
     array_push($classes, 'ws-feature-'.$feature_color);
 }
 
+$f = \File::getByID($fID);
+
+if (is_object($f) && $f->getFileID()) {
+    array_push($classes, 'ws-feature-quote-2');
+} else {
+    array_push($classes, 'ws-feature-quote-1');
+}
+
 $class = implode(' ', $classes);
 
 $author = array();
@@ -26,7 +34,7 @@ if ($company) {
 }
 ?>
 
-<section class="ws-block ws-feature ws-feature-quote ws-feature-quote-1 <?=$class?>">
+<section class="ws-block ws-feature ws-feature-quote <?=$class?>">
     <figure class="ws-feature-inner">
         <?php if ($paragraph): ?>
             <blockquote class="ws-feature-title">
@@ -39,23 +47,18 @@ if ($company) {
         <?php endif; ?>
         <figcaption>
             — <?php echo implode(', ', $author); ?>
-            <?php if ($fID): ?>
+            <?php if (is_object($f) && $f->getFileID()): ?>
                 <?php
-                $f = \File::getByID($fID);
-                ?>
-                <?php if (is_object($f) && $f->getFileID()): ?>
-                    <?php
-                    if (is_object($thumbnailType)) {
-                        $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
-                    } else {
-                        $src = $f->getRelativePath();
-                        if (!$src) {
-                            $src = $f->getURL();
-                        }
+                if (is_object($thumbnailType)) {
+                    $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
+                } else {
+                    $src = $f->getRelativePath();
+                    if (!$src) {
+                        $src = $f->getURL();
                     }
-                    ?>
-                    <img src="<?php echo h($src); ?>" alt="" role="presentation">
-                <?php endif; ?>
+                }
+                ?>
+                <img src="<?php echo h($src); ?>" alt="" role="presentation">
             <?php endif; ?>
         </figcaption>
     </figure>
