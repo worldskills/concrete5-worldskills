@@ -34,6 +34,7 @@ class Controller extends BlockController
         $params = array(
             'limit' => 999,
             'public_view_only' => 1,
+            'show_inactive' => 1,
         );
         if ($this->skillId) {
             $params['skill'] = $this->skillId;
@@ -147,6 +148,7 @@ class Controller extends BlockController
             'limit' => $limit,
             'offset' => $offset,
             'public_view_only' => 1,
+            'show_inactive' => 1,
             'sort' => 'lastname_asc',
         );
 
