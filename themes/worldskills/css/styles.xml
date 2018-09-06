@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <styles version="1.0">
+    <set name="Full Page">
+        <style name="Link" variable="body-link" type="color" />
+        <style name="Link Hover" variable="body-link-hover" type="color" />
+    </set>
     <set name="Header">
         <style name="Background" variable="header-background" type="color" />
     </set>
