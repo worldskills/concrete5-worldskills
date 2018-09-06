@@ -9703,6 +9703,27 @@ h6.ws-h-icon,
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.19 15.56' width='9.19' height='15.56'%3E%3Cpolygon fill='%230E779F' points='1.41 15.56 0 14.14 6.36 7.78 0 1.41 1.41 0 9.19 7.78 1.41 15.56'/%3E%3C/svg%3E");
   color: #0E779F;
 }
+.ws-feature-pink .ws-feature-inner {
+  background-color: #D51067;
+  color: #fff;
+  background-image: url(../img/backgrounds/bg_squares_yellow.png);
+  background-position: right top;
+}
+.ws-feature-pink .ws-feature-inner a {
+  color: #fff;
+}
+.ws-feature-pink .ws-feature-inner a:hover {
+  color: #fff;
+}
+.ws-feature-pink .ws-feature-inner .btn-white {
+  color: #D51067;
+}
+.ws-feature-pink .ws-feature-inner .btn-more.btn-white,
+.ws-feature-pink .ws-feature-inner .btn-more.btn-white:hover,
+.ws-feature-pink .ws-feature-inner .btn-more.btn-outline-white:hover {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.19 15.56' width='9.19' height='15.56'%3E%3Cpolygon fill='%23D51067' points='1.41 15.56 0 14.14 6.36 7.78 0 1.41 1.41 0 9.19 7.78 1.41 15.56'/%3E%3C/svg%3E");
+  color: #D51067;
+}
 
 .ws-feature-quote .ws-feature-title {
   margin-bottom: 0.5rem;
