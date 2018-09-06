@@ -1,5 +1,5 @@
 <?php
 
-$feature_color = 'lightblue';
+$feature_color = 'cyan';
 
 require dirname(__FILE__) . '/../worldskills_quote.php';
