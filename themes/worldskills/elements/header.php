@@ -20,7 +20,6 @@
         <?php
         $a = new GlobalArea('Header Stripe');
         $a->setCustomTemplate('image', 'worldskills_navbar_stripe.php');
-        $a->disableControls();
         $a->display();
         ?>
 
