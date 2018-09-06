@@ -9721,17 +9721,10 @@ h6.ws-h-icon,
   background-repeat: repeat-x;
 }
 .ws-feature-quote.ws-feature-orange .ws-feature-inner {
-  background-image: url(../img/backgrounds/bg_quotes_pink.png);
+  background-image: url(../img/backgrounds/bg_quotes_orange.svg);
 }
 .ws-feature-quote.ws-feature-cyan .ws-feature-inner {
-  background-image: url(../img/backgrounds/bg_quotes_blue.png);
-  background-image: url("../img/backgrounds/bg_quotes_blue.png");
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .ws-feature-quote.ws-feature-cyan .ws-feature-inner {
-    background-image: url("../img/backgrounds/bg_quotes_blue@2x.png");
-    background-size: 722px 423px;
-  }
+  background-image: url(../img/backgrounds/bg_quotes_blue.svg);
 }
 
 .ws-feature-quote-1 blockquote {
@@ -10085,7 +10078,7 @@ h6.ws-h-icon,
 .ws-hero-quote {
   background-color: #0E779F;
   color: #fff;
-  background-image: url("../img/backgrounds/bg_quotes_blue.png");
+  background-image: url(../img/backgrounds/bg_quotes_blue.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: auto;
@@ -10105,12 +10098,6 @@ h6.ws-h-icon,
 .ws-hero-quote .btn-more.btn-outline-white:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.19 15.56' width='9.19' height='15.56'%3E%3Cpolygon fill='%230E779F' points='1.41 15.56 0 14.14 6.36 7.78 0 1.41 1.41 0 9.19 7.78 1.41 15.56'/%3E%3C/svg%3E");
   color: #0E779F;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .ws-hero-quote {
-    background-image: url("../img/backgrounds/bg_quotes_blue@2x.png");
-    background-size: 722px 423px;
-  }
 }
 .ws-hero-quote .ws-hero-title {
   padding-top: 50px;
