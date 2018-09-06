@@ -42,6 +42,7 @@ class PageTheme extends Theme
     {
        return array(
            'content' => 'worldskills_content.php',
+           'feature' => 'worldskills_feature_dark_blue.php',
            'image' => 'worldskills_fluid.php',
            'testimonial' => 'worldskills_pullquote.php',
        );
