@@ -14,6 +14,7 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
         $title = $th->entities($page->getCollectionName());
 
         $url = $nh->getLinkToCollection($page);
+        $target = '_self';
 
         $description = $page->getCollectionDescription();
 
@@ -33,10 +34,16 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
                 }
             }
         }
+
+        $urlRedirect = $page->getAttribute('url_redirect');
+        if ($urlRedirect) {
+            $url = $urlRedirect;
+            $target = '_blank';
+        }
         ?>
 
         <li class="col-sm-6 col-md-3 ws-imglink">
-            <a href="<?php echo $url ?>">
+            <a href="<?php echo $url ?>" target="<?php echo $target; ?>">
                 <?php if ($src): ?>
                     <img class="ws-imglink-img" src="<?php echo $src ?>" alt="" />
                 <?php endif; ?>
