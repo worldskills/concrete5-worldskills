@@ -54,7 +54,7 @@ $class = implode(' ', $classes);
         ?>
             <h1 class="ws-feature-title">
                 <?php if ($linkURL): ?>
-                    <a href="<?=$linkURL?>"><?=$title?></a>
+                    <a href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>><?=$title?></a>
                 <?php else: ?>
                     <?=$title?>
                 <?php endif; ?>
@@ -69,7 +69,7 @@ $class = implode(' ', $classes);
         ?>
     </div>
     <?php if ($linkURL): ?>
-        <a class="ws-feature-image-inner" <?=$style?> href="<?=$linkURL?>"></a>
+        <a class="ws-feature-image-inner" <?=$style?> href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>></a>
     <?php else: ?>
         <div class="ws-feature-image-inner" <?=$style?>></div>
     <?php endif; ?>
