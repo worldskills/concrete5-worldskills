@@ -48,29 +48,29 @@ $class = implode(' ', $classes);
 
 ?>
 <article class="ws-block ws-feature ws-feature-image <?=$class?>">
+<?php if ($linkURL): ?>
+    <a class="ws-feature-inner" href="<?=$linkURL?>">
+<?php else: ?>
     <div class="ws-feature-inner">
-        <?php
-        if ($title) {
-        ?>
-            <h1 class="ws-feature-title">
-                <?php if ($linkURL): ?>
-                    <a href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>><?=$title?></a>
-                <?php else: ?>
-                    <?=$title?>
-                <?php endif; ?>
-            </h1>
-        <?php
-        }
-        if ($altText) {
+<?php endif; ?>
+        <div class="ws-feature-content">
+            <?php
+            if ($title) {
             ?>
-            <p><?=$altText?></p>
-        <?php
-        }
-        ?>
+                <h1 class="ws-feature-title"><?=$title?></h1>
+            <?php
+            }
+            if ($altText) {
+                ?>
+                <p><?=$altText?></p>
+            <?php
+            }
+            ?>
+        </div>
+        <div class="ws-feature-image-content" <?=$style?>></div>
+<?php if ($linkURL): ?>
+    </a>
+<?php else: ?>
     </div>
-    <?php if ($linkURL): ?>
-        <a class="ws-feature-image-inner" <?=$style?> href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>></a>
-    <?php else: ?>
-        <div class="ws-feature-image-inner" <?=$style?>></div>
-    <?php endif; ?>
+<?php endif; ?>
 </article>

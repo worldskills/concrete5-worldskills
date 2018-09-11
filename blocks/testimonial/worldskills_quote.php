@@ -35,31 +35,33 @@ if ($company) {
 ?>
 
 <section class="ws-block ws-feature ws-feature-quote <?=$class?>">
-    <figure class="ws-feature-inner">
-        <?php if ($paragraph): ?>
-            <blockquote class="ws-feature-title">
-                <?php if ($companyURL): ?>
-                    <a href="<?php echo h($companyURL); ?>"><?php echo h($paragraph); ?></a>
-                <?php else: ?>
-                    <?php echo h($paragraph); ?>
-                <?php endif; ?>
-            </blockquote>
-        <?php endif; ?>
-        <figcaption>
-            — <?php echo implode(', ', $author); ?>
-            <?php if (is_object($f) && $f->getFileID()): ?>
-                <?php
-                if (is_object($thumbnailType)) {
-                    $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
-                } else {
-                    $src = $f->getRelativePath();
-                    if (!$src) {
-                        $src = $f->getURL();
-                    }
-                }
-                ?>
-                <img src="<?php echo h($src); ?>" alt="" role="presentation">
+    <div class="ws-feature-inner">
+        <figure class="ws-feature-content">
+            <?php if ($paragraph): ?>
+                <blockquote class="ws-feature-title">
+                    <?php if ($companyURL): ?>
+                        <a href="<?php echo h($companyURL); ?>"><?php echo h($paragraph); ?></a>
+                    <?php else: ?>
+                        <?php echo h($paragraph); ?>
+                    <?php endif; ?>
+                </blockquote>
             <?php endif; ?>
-        </figcaption>
-    </figure>
+            <figcaption>
+                — <?php echo implode(', ', $author); ?>
+                <?php if (is_object($f) && $f->getFileID()): ?>
+                    <?php
+                    if (is_object($thumbnailType)) {
+                        $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
+                    } else {
+                        $src = $f->getRelativePath();
+                        if (!$src) {
+                            $src = $f->getURL();
+                        }
+                    }
+                    ?>
+                    <img src="<?php echo h($src); ?>" alt="" role="presentation">
+                <?php endif; ?>
+            </figcaption>
+        </figure>
+    </div>
 </section>
