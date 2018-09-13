@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <styles version="1.0">
-    <set name="Full Page">
+    <set name="Page">
         <style name="Link" variable="body-link" type="color" />
         <style name="Link Hover" variable="body-link-hover" type="color" />
     </set>
@@ -9,5 +9,12 @@
     </set>
     <set name="Footer">
         <style name="Background" variable="footer-background" type="color" />
+    </set>
+    <set name="Feature">
+        <style name="Background" variable="feature-background" type="color" />
+        <style name="Cyan Background" variable="feature-cyan-background" type="color" />
+        <style name="Orange Background" variable="feature-orange-background" type="color" />
+        <style name="Pink Background" variable="feature-pink-background" type="color" />
+        <style name="Purple Background" variable="feature-purple-background" type="color" />
     </set>
 </styles>
