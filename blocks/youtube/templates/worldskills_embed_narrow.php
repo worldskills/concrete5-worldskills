@@ -3,7 +3,7 @@
 
     <div class="col-lg-10 offset-lg-1">
 
-        <?php require dirname(__FILE__) . '/worldskills_embed.php'; ?>
+        <?php require dirname(__FILE__) . '/worldskills_embed_condensed.php'; ?>
 
     </div>
 
