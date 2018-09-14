@@ -45,6 +45,7 @@ class PageTheme extends Theme
            'feature' => 'worldskills_feature_dark_blue.php',
            'image' => 'worldskills_fluid.php',
            'testimonial' => 'worldskills_pullquote.php',
+           'youtube' => 'worldskills_embed.php',
        );
     }
 
