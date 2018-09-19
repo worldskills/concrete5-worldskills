@@ -12,9 +12,14 @@
     </set>
     <set name="Feature">
         <style name="Background" variable="feature-background" type="color" />
+        <style name="Pattern" variable="feature-pattern" type="color" />
         <style name="Cyan Background" variable="feature-cyan-background" type="color" />
+        <style name="Cyan Pattern" variable="feature-cyan-pattern" type="color" />
         <style name="Orange Background" variable="feature-orange-background" type="color" />
+        <style name="Orange Pattern" variable="feature-orange-pattern" type="color" />
         <style name="Pink Background" variable="feature-pink-background" type="color" />
+        <style name="Pink Pattern" variable="feature-pink-pattern" type="color" />
         <style name="Purple Background" variable="feature-purple-background" type="color" />
+        <style name="Purple Pattern" variable="feature-purple-pattern" type="color" />
     </set>
 </styles>
