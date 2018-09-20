@@ -12,6 +12,9 @@ class PageTheme extends Theme
 
         $this->providesAsset('css', 'bootstrap/*');
         $this->providesAsset('css', 'core/frontend/pagination');
+        $this->providesAsset('css', 'blocks/feature');
+        $this->providesAsset('css', 'blocks/page_list');
+        $this->providesAsset('css', 'blocks/search');
 
         $this->requireAsset('css', 'font-awesome');
     }
@@ -46,6 +49,8 @@ class PageTheme extends Theme
            'image' => 'worldskills_fluid.php',
            'testimonial' => 'worldskills_pullquote.php',
            'youtube' => 'worldskills_embed.php',
+           'page_list' => 'worldskills_pages.php',
+           'search' => 'worldskills_search.php',
        );
     }
 
