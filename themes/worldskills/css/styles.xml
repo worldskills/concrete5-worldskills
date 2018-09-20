@@ -22,4 +22,10 @@
         <style name="Purple Background" variable="feature-purple-background" type="color" />
         <style name="Purple Pattern" variable="feature-purple-pattern" type="color" />
     </set>
+    <set name="Hero">
+        <style name="Cyan Background" variable="hero-cyan-background" type="color" />
+        <style name="Cyan Pattern" variable="hero-cyan-pattern" type="color" />
+        <style name="Purple Background" variable="hero-purple-background" type="color" />
+        <style name="Purple Pattern" variable="hero-purple-pattern" type="color" />
+    </set>
 </styles>
