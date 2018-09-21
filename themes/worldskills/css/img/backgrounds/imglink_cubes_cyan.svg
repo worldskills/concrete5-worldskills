@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="864px" height="500px" viewBox="0 0 864 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="imglink_cubes_cyan" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#0E779F" x="0" y="0" width="864" height="500"></rect>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="1 85 73 43 73 -40 1 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 85 73 43 73 -40 145 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="1 335 73 293 73 210 1 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 335 73 293 73 210 145 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="73 210 1 168 1 85 73 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="73 210 145 168 145 85 73 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 85 217 43 217 -40 145 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 85 217 43 217 -40 289 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 335 217 293 217 210 145 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 335 217 293 217 210 289 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="217 210 145 168 145 85 217 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="217 210 289 168 289 85 217 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 85 361 43 361 -40 289 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 85 361 43 361 -40 433 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 335 361 293 361 210 289 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 335 361 293 361 210 433 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="361 210 289 168 289 85 361 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="361 210 433 168 433 85 361 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 85 505 43 505 -40 433 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 85 505 43 505 -40 577 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 335 505 293 505 210 433 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 335 505 293 505 210 577 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="505 210 433 168 433 85 505 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="505 210 577 168 577 85 505 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 85 649 43 649 -40 577 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 85 649 43 649 -40 721 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 335 649 293 649 210 577 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 335 649 293 649 210 721 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="649 210 577 168 577 85 649 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="649 210 721 168 721 85 649 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 85 793 43 793 -40 721 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="865 85 793 43 793 -40 865 2"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 335 793 293 793 210 721 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="865 335 793 293 793 210 865 252"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="793 210 721 168 721 85 793 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="793 210 865 168 865 85 793 127"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="1 585 73 543 73 460 1 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 585 73 543 73 460 145 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="73 460 1 418 1 335 73 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="73 460 145 418 145 335 73 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="145 585 217 543 217 460 145 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 585 217 543 217 460 289 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="217 460 145 418 145 335 217 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="217 460 289 418 289 335 217 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="289 585 361 543 361 460 289 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 585 361 543 361 460 433 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="361 460 289 418 289 335 361 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="361 460 433 418 433 335 361 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="433 585 505 543 505 460 433 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 585 505 543 505 460 577 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="505 460 433 418 433 335 505 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="505 460 577 418 577 335 505 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="577 585 649 543 649 460 577 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 585 649 543 649 460 721 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="649 460 577 418 577 335 649 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="649 460 721 418 721 335 649 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="721 585 793 543 793 460 721 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="865 585 793 543 793 460 865 502"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="793 460 721 418 721 335 793 377"></polygon>
+        <polygon id="Path-2" stroke="#0093B7" stroke-width="2" fill-rule="nonzero" points="793 460 865 418 865 335 793 377"></polygon>
+    </g>
+</svg>
