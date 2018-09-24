@@ -28,6 +28,10 @@
   .background-svg(~'<?xml version="1.0" encoding="UTF-8"?><svg width="722px" height="423px" viewBox="0 0 722 423" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="bg_quotes_blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Path" stroke="@{color}" stroke-width="2" fill-rule="nonzero" points="20 145 265 3 265 100 340 145 340 328 180 420 20 328"></polygon><polygon id="Path" stroke="@{color}" stroke-width="2" fill-rule="nonzero" points="382 145 627 3 627 100 702 145 702 328 542 420 382 328"></polygon></g></svg>');
 }
 
+.bg-navbar-stripe(@color1, @color2, @color3, @color4, @color5, @color6, @color7, @color8) {
+    .background-svg(~'<?xml version="1.0" encoding="UTF-8"?><svg width="1200px" height="3px" viewBox="0 0 1200 3" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect x="0" y="0" width="1200" height="3" style="fill:@{color1};"/><rect x="150" y="0" width="1050" height="3" style="fill:@{color2};"/><rect x="300" y="0" width="900" height="3" style="fill:@{color3};"/><rect x="450" y="0" width="750" height="3" style="fill:@{color4};"/><rect x="600" y="0" width="600" height="3" style="fill:@{color5};"/><rect x="750" y="0" width="450" height="3" style="fill:@{color6};"/><rect x="900" y="0" width="300" height="3" style="fill:@{color7};"/><rect x="1050" y="0" width="150" height="3" style="fill:@{color8};"/></svg>');
+}
+
 div.ccm-panel-content ul.nav,
 div.ccm-panel-content menu {
   display:block;
@@ -40,6 +44,10 @@ div.ccm-panel-content menu {
 
 .ws-navbar-main {
   background-color: @header-background-color;
+}
+
+.ws-navbar-stripe {
+  .bg-navbar-stripe(@navbar-stripe1-color, @navbar-stripe2-color, @navbar-stripe3-color, @navbar-stripe4-color, @navbar-stripe5-color, @navbar-stripe6-color, @navbar-stripe7-color, @navbar-stripe8-color);
 }
 
 .ws-page-footer {

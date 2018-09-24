@@ -518,29 +518,6 @@
                 </blocks>
             </area>
         </stack>
-        <stack name="Header Stripe" type="global_area" path="/header-stripe">
-            <area name="Main">
-                <blocks>
-                    <block type="image" name="" custom-template="worldskills_navbar_stripe.php">
-                        <data table="btContentImage">
-                            <record>
-                                <fID>{ccm:export:file:stripe.svg}</fID>
-                                <fOnstateID />
-                                <cropImage><![CDATA[0]]></cropImage>
-                                <maxWidth><![CDATA[0]]></maxWidth>
-                                <maxHeight><![CDATA[0]]></maxHeight>
-                                <externalLink />
-                                <internalLinkCID />
-                                <fileLinkID />
-                                <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
-                                <altText />
-                                <title />
-                            </record>
-                        </data>
-                    </block>
-                </blocks>
-            </area>
-        </stack>
         <stack name="Sidebar" type="global_area" path="/sidebar">
             <area name="Main">
                 <blocks>

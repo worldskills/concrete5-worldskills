@@ -17,13 +17,7 @@
 
     <div class="<?php echo $c->getPageWrapperClass()?>">
 
-        <?php
-        $a = new GlobalArea('Header Stripe');
-        $a->setCustomTemplate('image', 'worldskills_navbar_stripe.php');
-        $a->display();
-        ?>
-
-        <nav class="navbar navbar-expand-md ws-navbar-main">
+        <nav class="navbar navbar-expand-md ws-navbar-main ws-navbar-stripe">
             <div class="container">
                 <?php
                 $a = new GlobalArea('Header Site Title');

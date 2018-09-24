@@ -6,6 +6,14 @@
     </set>
     <set name="Header">
         <style name="Background" variable="header-background" type="color" />
+        <style name="Navbar Stripe 1" variable="navbar-stripe1" type="color" />
+        <style name="Navbar Stripe 2" variable="navbar-stripe2" type="color" />
+        <style name="Navbar Stripe 3" variable="navbar-stripe3" type="color" />
+        <style name="Navbar Stripe 4" variable="navbar-stripe4" type="color" />
+        <style name="Navbar Stripe 5" variable="navbar-stripe5" type="color" />
+        <style name="Navbar Stripe 6" variable="navbar-stripe6" type="color" />
+        <style name="Navbar Stripe 7" variable="navbar-stripe7" type="color" />
+        <style name="Navbar Stripe 8" variable="navbar-stripe8" type="color" />
     </set>
     <set name="Footer">
         <style name="Background" variable="footer-background" type="color" />
