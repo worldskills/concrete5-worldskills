@@ -3,6 +3,7 @@
     <set name="Page">
         <style name="Link" variable="body-link" type="color" />
         <style name="Link Hover" variable="body-link-hover" type="color" />
+        <style name="Button Primary" variable="button-primary" type="color" />
     </set>
     <set name="Header">
         <style name="Background" variable="header-background" type="color" />
