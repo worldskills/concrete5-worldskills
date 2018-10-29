@@ -73,6 +73,16 @@ class Controller extends GenericOauth2TypeController
 
     protected function attemptAuthentication()
     {
+        $extractor = $this->getExtractor();
+
+        if ($user = \UserInfo::getByEmail($extractor->getEmail())) {
+            if ($user && !$user->isError()) {
+                // A user account already exists for this email, please log in and attach from your account page.
+                // clear email
+                $user->update(array('uEmail' => ''));
+            }
+        }
+
         $user = parent::attemptAuthentication();
 
         $userInfo = \UserInfo::getByID($user->getUserID());
