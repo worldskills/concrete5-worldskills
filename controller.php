@@ -171,6 +171,9 @@ class Controller extends Package
         $provider = new \Concrete\Package\Worldskills\Authentication\ServiceProvider($app);
         $provider->register();
 
+        $accessTokenCheck = $app->make('worldskills/accesss_token_check');
+        \Events::addListener('on_start', array($accessTokenCheck, 'checkAccessToken'));
+
         // grid framework
         $manager = $app->make('manager/grid_framework');
         $manager->extend('bootstrap4', function($app) {

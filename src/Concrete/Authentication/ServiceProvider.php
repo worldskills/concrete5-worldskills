@@ -10,6 +10,8 @@ class ServiceProvider extends \Concrete\Core\Foundation\Service\Provider
 {
     public function register()
     {
+        $config = $this->app->make('config');
+
         /** @var ExtractorFactory $extractor */
         $extractor = $this->app->make('oauth/factory/extractor');
         $extractor->addExtractorMapping('Concrete\\Package\\Worldskills\\Authentication\\Service', 'Concrete\\Package\\Worldskills\\Authentication\\Extractor');
@@ -27,6 +29,21 @@ class ServiceProvider extends \Concrete\Core\Foundation\Service\Provider
             $session = new SymfonySession(\Session::getFacadeRoot(), false);
 
             return $factory->createService('worldskills', $credentials, $session);
+        });
+
+        $this->app->singleton('worldskills/service/auth', function ($app) use ($config) {
+
+            return new \Concrete\Package\Worldskills\WorldSkills\Service\Auth(
+                $config->get('worldskills.api_url', 'https://api.worldskills.org')
+            );
+        });
+
+        $this->app->singleton('worldskills/accesss_token_check', function ($app) use ($config) {
+
+            return new \Concrete\Package\Worldskills\WorldSkills\AccessTokenCheck(
+                $app->make('session'),
+                $app->make('worldskills/service/auth')
+            );
         });
     }
 }
