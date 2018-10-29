@@ -63,7 +63,8 @@ class AccessTokenCheck
                         if ($logout) {
 
                             // access token check failed, logout
-                            $user->logout();
+                            $user->unloadCollectionEdit();
+                            $user->invalidateSession();
 
                             // reload
                             $request = \Request::getInstance();
