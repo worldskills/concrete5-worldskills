@@ -118,4 +118,14 @@ class Controller extends GenericOauth2TypeController
         // login user again to make sure groups are reloaded
         return \User::loginByUserID($user->getUserID());
     }
+
+    public function deauthenticate(User $u)
+    {
+        $auth = $this->app->make('worldskills/service/auth');
+        $accessToken = $this->getWorldSkillsAccessToken();
+
+        if ($accessToken) {
+            $response = $auth->logout($accessToken);
+        }
+    }
 }

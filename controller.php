@@ -174,9 +174,6 @@ class Controller extends Package
         $accessTokenCheck = $app->make('worldskills/accesss_token_check');
         \Events::addListener('on_start', array($accessTokenCheck, 'checkAccessToken'));
 
-        $logout = $app->make('worldskills/logout');
-        \Events::addListener('on_user_logout', array($logout, 'logout'));
-
         // grid framework
         $manager = $app->make('manager/grid_framework');
         $manager->extend('bootstrap4', function($app) {
