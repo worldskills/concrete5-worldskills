@@ -45,5 +45,13 @@ class ServiceProvider extends \Concrete\Core\Foundation\Service\Provider
                 $app->make('worldskills/service/auth')
             );
         });
+
+        $this->app->singleton('worldskills/logout', function ($app) use ($config) {
+
+            return new \Concrete\Package\Worldskills\WorldSkills\Logout(
+                $app->make('worldskills/service/auth')
+            );
+        });
+
     }
 }
