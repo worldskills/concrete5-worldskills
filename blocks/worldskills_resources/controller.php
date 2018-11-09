@@ -49,7 +49,7 @@ class Controller extends BlockController
     protected function getSkills()
     {
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events/' . $this->event . '/skills?type=official&type=demo&limit=100&sort=sector_name_asc';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/events/' . $this->event . '/skills?limit=100&sort=sector_name_asc';
 
         $data = \Core::make('helper/file')->getContents($url);
         $data = json_decode($data, true);
