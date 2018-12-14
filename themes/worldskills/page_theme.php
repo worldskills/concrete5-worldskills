@@ -51,6 +51,7 @@ class PageTheme extends Theme
            'youtube' => 'worldskills_embed.php',
            'page_list' => 'worldskills_pages.php',
            'search' => 'worldskills_search.php',
+           'next_previous' => 'worldskills_next_previous.php',
        );
     }
 
