@@ -498,7 +498,7 @@
         <stack name="Header Site Title" type="global_area" path="/header-site-title">
             <area name="Main">
                 <blocks>
-                    <block type="image" name="">
+                    <block type="image" name="" custom-template="worldskills_navbar_brand.php">
                         <data table="btContentImage">
                             <record>
                                 <fID>{ccm:export:file:wordmark.svg}</fID>
