@@ -78,7 +78,7 @@
                                                 <cropImage><![CDATA[0]]></cropImage>
                                                 <maxWidth><![CDATA[0]]></maxWidth>
                                                 <maxHeight><![CDATA[0]]></maxHeight>
-                                                <externalLink />
+                                                <externalLink><![CDATA[/]]></externalLink>
                                                 <internalLinkCID />
                                                 <fileLinkID />
                                                 <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
@@ -148,7 +148,7 @@
         </pagetype>
     </pagetypes>
     <pages>
-        <page name="Home" path="" public-date="2018-08-23 07:56:54" filename="" pagetype="" template="hero_overlay" user="admin" description="" package="" root="true">
+        <page name="Home" path="" public-date="2018-12-18 08:23:58" filename="" pagetype="page" template="hero_overlay" user="admin" description="" package="" root="true">
             <attributes>
                 <attributekey handle="exclude_nav">
                     <value>1</value>
@@ -156,7 +156,7 @@
             </attributes>
             <area name="Main">
                 <blocks>
-                    <block type="content" name="">
+                    <block type="content" name="" custom-template="worldskills_content.php">
                         <data table="btContentLocal">
                             <record>
                                 <content><![CDATA[<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
@@ -171,7 +171,7 @@
             </area>
             <area name="Page Hero Overlay">
                 <blocks>
-                    <block type="image" name="">
+                    <block type="image" name="" custom-template="worldskills_fluid.php">
                         <data table="btContentImage">
                             <record>
                                 <fID>{ccm:export:file:logo.svg}</fID>
@@ -180,7 +180,7 @@
                                 <maxWidth><![CDATA[0]]></maxWidth>
                                 <maxHeight><![CDATA[0]]></maxHeight>
                                 <externalLink />
-                                <internalLinkCID>{ccm:export:page:}</internalLinkCID>
+                                <internalLinkCID />
                                 <fileLinkID />
                                 <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
                                 <altText />
@@ -201,7 +201,7 @@
                                 <maxWidth><![CDATA[0]]></maxWidth>
                                 <maxHeight><![CDATA[0]]></maxHeight>
                                 <externalLink />
-                                <internalLinkCID>{ccm:export:page:/about}</internalLinkCID>
+                                <internalLinkCID />
                                 <fileLinkID />
                                 <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
                                 <altText><![CDATA[We've helped millions of young people. Find out more about how we can help you]]></altText>
@@ -212,7 +212,7 @@
                 </blocks>
             </area>
         </page>
-        <page name="About" path="/about" public-date="2018-08-23 07:59:07" filename="" pagetype="" template="full" user="admin" description="" package="">
+        <page name="About" path="/about" public-date="2018-08-23 07:59:07" filename="" pagetype="page" template="full" user="admin" description="" package="">
             <area name="Main">
                 <blocks>
                     <block type="page_title" name="">
@@ -235,11 +235,46 @@
                     <block type="content" name="" custom-template="worldskills_content.php">
                         <data table="btContentLocal">
                             <record>
-                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
-                            <p>Nunc non enim vitae massa pretium venenatis. Maecenas ullamcorper, justo ac consequat dictum, mi massa sodales erat, nec posuere libero elit quis quam. Vivamus in tristique elit. Pellentesque porta suscipit quam eget egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc hendrerit sem eget massa tempor, nec sodales arcu tincidunt. Quisque consequat ornare vulputate. Cras facilisis finibus lacinia. Aenean sed magna sit amet neque mollis commodo nec ac urna. In nec velit nec tortor lobortis sodales vitae a turpis.</p>
-                            <p>Vivamus laoreet dictum diam ac molestie. Etiam eu lobortis dui. Proin pellentesque tortor libero, sed tincidunt lacus pulvinar in. Sed at eros vitae purus luctus bibendum at in diam. Donec commodo tempus justo, sit amet sagittis metus eleifend condimentum. Maecenas aliquam lectus vitae metus fermentum, ac porttitor erat elementum. Integer ac lectus eget nisi egestas pellentesque. Donec leo augue, tristique vitae diam sed, fermentum imperdiet mauris. Vivamus elementum lectus id urna tincidunt, et ullamcorper ipsum imperdiet. Donec et dui sit amet sapien vestibulum fermentum sit amet sed odio. Fusce at est tincidunt, bibendum nunc at, tincidunt lorem. Vivamus id porttitor est.</p>
-                            <p>Fusce mi nisi, porttitor at interdum in, porta nec tortor. Nunc eget risus elementum, vehicula risus laoreet, egestas metus. Phasellus vitae risus tincidunt, commodo nisl quis, egestas neque. Duis egestas turpis at libero tempor, quis interdum elit mollis. Aenean accumsan euismod rutrum. Vestibulum dictum nibh dolor, non congue leo bibendum eu. Aliquam porttitor sit amet elit porta vestibulum. Praesent sodales at turpis ac hendrerit.</p>
-                            <p>Maecenas tincidunt sit amet nisl non egestas. Cras dapibus pharetra justo ut feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan enim ut magna molestie hendrerit. Ut eu convallis tortor, a luctus dui. Morbi iaculis, nisi consectetur mollis interdum, justo lorem ultrices enim, at scelerisque magna turpis eget quam. Donec vel feugiat odio. Vestibulum tristique magna in orci tincidunt hendrerit. Suspendisse bibendum vitae est sed aliquam. Aenean ut porta massa, vel vestibulum enim. Nullam aliquam condimentum ipsum et condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc luctus blandit ex, id bibendum quam congue at. Integer accumsan est ut nisi faucibus, at lobortis risus tempor. Integer dignissim sem in dolor eleifend venenatis.</p>]]></content>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.<br />
+&nbsp;</p>]]></content>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="page_list" name="" custom-template="worldskills_pages.php">
+                        <data table="btPageList">
+                            <record>
+                                <num><![CDATA[0]]></num>
+                                <orderBy><![CDATA[display_asc]]></orderBy>
+                                <cParentID>{ccm:export:page:/about}</cParentID>
+                                <cThis><![CDATA[1]]></cThis>
+                                <cThisParent><![CDATA[0]]></cThisParent>
+                                <useButtonForLink><![CDATA[0]]></useButtonForLink>
+                                <buttonLinkText />
+                                <pageListTitle />
+                                <filterByRelated><![CDATA[0]]></filterByRelated>
+                                <filterByCustomTopic><![CDATA[0]]></filterByCustomTopic>
+                                <filterDateOption />
+                                <filterDateDays><![CDATA[0]]></filterDateDays>
+                                <filterDateStart />
+                                <filterDateEnd />
+                                <relatedTopicAttributeKeyHandle />
+                                <customTopicAttributeKeyHandle />
+                                <customTopicTreeNodeID><![CDATA[0]]></customTopicTreeNodeID>
+                                <includeName><![CDATA[1]]></includeName>
+                                <includeDescription><![CDATA[1]]></includeDescription>
+                                <includeDate><![CDATA[0]]></includeDate>
+                                <includeAllDescendents><![CDATA[0]]></includeAllDescendents>
+                                <paginate><![CDATA[0]]></paginate>
+                                <displayAliases><![CDATA[0]]></displayAliases>
+                                <ignorePermissions><![CDATA[0]]></ignorePermissions>
+                                <enableExternalFiltering><![CDATA[0]]></enableExternalFiltering>
+                                <ptID />
+                                <pfID />
+                                <truncateSummaries><![CDATA[0]]></truncateSummaries>
+                                <displayFeaturedOnly><![CDATA[0]]></displayFeaturedOnly>
+                                <noResultsMessage />
+                                <displayThumbnail><![CDATA[0]]></displayThumbnail>
+                                <truncateChars><![CDATA[0]]></truncateChars>
                             </record>
                         </data>
                     </block>
@@ -249,7 +284,48 @@
                 <blocks />
             </area>
         </page>
-        <page name="Contact" path="/contact" public-date="2018-08-23 07:59:07" filename="" pagetype="" template="full" user="admin" description="" package="">
+        <page name="Organization" path="/about/organization" public-date="2018-08-23 07:59:08" filename="" pagetype="page" template="full" user="admin" description="Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci." package="">
+            <area name="Main">
+                <blocks>
+                    <block type="page_title" name="">
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[Organization]]></titleText>
+                                <formatting><![CDATA[h1]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="content" name="" custom-template="worldskills_content.php">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
+
+<p>Nunc non enim vitae massa pretium venenatis. Maecenas ullamcorper, justo ac consequat dictum, mi massa sodales erat, nec posuere libero elit quis quam. Vivamus in tristique elit. Pellentesque porta suscipit quam eget egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc hendrerit sem eget massa tempor, nec sodales arcu tincidunt. Quisque consequat ornare vulputate. Cras facilisis finibus lacinia. Aenean sed magna sit amet neque mollis commodo nec ac urna. In nec velit nec tortor lobortis sodales vitae a turpis.</p>
+
+<p>Vivamus laoreet dictum diam ac molestie. Etiam eu lobortis dui. Proin pellentesque tortor libero, sed tincidunt lacus pulvinar in. Sed at eros vitae purus luctus bibendum at in diam. Donec commodo tempus justo, sit amet sagittis metus eleifend condimentum. Maecenas aliquam lectus vitae metus fermentum, ac porttitor erat elementum. Integer ac lectus eget nisi egestas pellentesque. Donec leo augue, tristique vitae diam sed, fermentum imperdiet mauris. Vivamus elementum lectus id urna tincidunt, et ullamcorper ipsum imperdiet. Donec et dui sit amet sapien vestibulum fermentum sit amet sed odio. Fusce at est tincidunt, bibendum nunc at, tincidunt lorem. Vivamus id porttitor est.</p>
+
+<p>Fusce mi nisi, porttitor at interdum in, porta nec tortor. Nunc eget risus elementum, vehicula risus laoreet, egestas metus. Phasellus vitae risus tincidunt, commodo nisl quis, egestas neque. Duis egestas turpis at libero tempor, quis interdum elit mollis. Aenean accumsan euismod rutrum. Vestibulum dictum nibh dolor, non congue leo bibendum eu. Aliquam porttitor sit amet elit porta vestibulum. Praesent sodales at turpis ac hendrerit.</p>
+
+<p>Maecenas tincidunt sit amet nisl non egestas. Cras dapibus pharetra justo ut feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan enim ut magna molestie hendrerit. Ut eu convallis tortor, a luctus dui. Morbi iaculis, nisi consectetur mollis interdum, justo lorem ultrices enim, at scelerisque magna turpis eget quam. Donec vel feugiat odio. Vestibulum tristique magna in orci tincidunt hendrerit. Suspendisse bibendum vitae est sed aliquam. Aenean ut porta massa, vel vestibulum enim. Nullam aliquam condimentum ipsum et condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc luctus blandit ex, id bibendum quam congue at. Integer accumsan est ut nisi faucibus, at lobortis risus tempor. Integer dignissim sem in dolor eleifend venenatis.</p>]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Page Header">
+                <blocks />
+            </area>
+        </page>
+        <page name="History" path="/about/history" public-date="2018-12-18 08:31:38" filename="" pagetype="page" template="full" user="admin" description="Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu." package="">
             <area name="Main">
                 <blocks>
                     <block type="page_title" name="">
@@ -269,14 +345,14 @@
                             </record>
                         </data>
                     </block>
-                    <block type="content" name="">
+                    <block type="content" name="" custom-template="worldskills_content.php">
                         <data table="btContentLocal">
                             <record>
-                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
-                              <p>Nunc non enim vitae massa pretium venenatis. Maecenas ullamcorper, justo ac consequat dictum, mi massa sodales erat, nec posuere libero elit quis quam. Vivamus in tristique elit. Pellentesque porta suscipit quam eget egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc hendrerit sem eget massa tempor, nec sodales arcu tincidunt. Quisque consequat ornare vulputate. Cras facilisis finibus lacinia. Aenean sed magna sit amet neque mollis commodo nec ac urna. In nec velit nec tortor lobortis sodales vitae a turpis.</p>
-                              <p>Vivamus laoreet dictum diam ac molestie. Etiam eu lobortis dui. Proin pellentesque tortor libero, sed tincidunt lacus pulvinar in. Sed at eros vitae purus luctus bibendum at in diam. Donec commodo tempus justo, sit amet sagittis metus eleifend condimentum. Maecenas aliquam lectus vitae metus fermentum, ac porttitor erat elementum. Integer ac lectus eget nisi egestas pellentesque. Donec leo augue, tristique vitae diam sed, fermentum imperdiet mauris. Vivamus elementum lectus id urna tincidunt, et ullamcorper ipsum imperdiet. Donec et dui sit amet sapien vestibulum fermentum sit amet sed odio. Fusce at est tincidunt, bibendum nunc at, tincidunt lorem. Vivamus id porttitor est.</p>
-                              <p>Fusce mi nisi, porttitor at interdum in, porta nec tortor. Nunc eget risus elementum, vehicula risus laoreet, egestas metus. Phasellus vitae risus tincidunt, commodo nisl quis, egestas neque. Duis egestas turpis at libero tempor, quis interdum elit mollis. Aenean accumsan euismod rutrum. Vestibulum dictum nibh dolor, non congue leo bibendum eu. Aliquam porttitor sit amet elit porta vestibulum. Praesent sodales at turpis ac hendrerit.</p>
-                              <p>Maecenas tincidunt sit amet nisl non egestas. Cras dapibus pharetra justo ut feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan enim ut magna molestie hendrerit. Ut eu convallis tortor, a luctus dui. Morbi iaculis, nisi consectetur mollis interdum, justo lorem ultrices enim, at scelerisque magna turpis eget quam. Donec vel feugiat odio. Vestibulum tristique magna in orci tincidunt hendrerit. Suspendisse bibendum vitae est sed aliquam. Aenean ut porta massa, vel vestibulum enim. Nullam aliquam condimentum ipsum et condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc luctus blandit ex, id bibendum quam congue at. Integer accumsan est ut nisi faucibus, at lobortis risus tempor. Integer dignissim sem in dolor eleifend venenatis.</p>]]></content>
+                                <content><![CDATA[<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+
+<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscing risus a sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat est.</p>
+
+<p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis xdis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida</p>]]></content>
                             </record>
                         </data>
                     </block>
@@ -286,42 +362,72 @@
                 <blocks />
             </area>
         </page>
-        <page name="Skills" path="/about/skills" public-date="2018-08-23 07:59:07" filename="" pagetype="" template="full" user="admin" description="" package="">
+        <page name="Contact" path="/contact" public-date="2018-08-23 07:59:07" filename="" pagetype="page" template="full" user="admin" description="" package="">
             <area name="Main">
                 <blocks>
-                    <block type="content" name="">
+                    <block type="page_title" name="">
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[0]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[About]]></titleText>
+                                <formatting><![CDATA[h1]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="content" name="" custom-template="worldskills_content.php">
                         <data table="btContentLocal">
                             <record>
-                                <content><![CDATA[<h2>Skills</h2>
-                              <p>
-                                <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
-                                <p>Nunc non enim vitae massa pretium venenatis. Maecenas ullamcorper, justo ac consequat dictum, mi massa sodales erat, nec posuere libero elit quis quam. Vivamus in tristique elit. Pellentesque porta suscipit quam eget egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc hendrerit sem eget massa tempor, nec sodales arcu tincidunt. Quisque consequat ornare vulputate. Cras facilisis finibus lacinia. Aenean sed magna sit amet neque mollis commodo nec ac urna. In nec velit nec tortor lobortis sodales vitae a turpis.</p>
-                                <p>Vivamus laoreet dictum diam ac molestie. Etiam eu lobortis dui. Proin pellentesque tortor libero, sed tincidunt lacus pulvinar in. Sed at eros vitae purus luctus bibendum at in diam. Donec commodo tempus justo, sit amet sagittis metus eleifend condimentum. Maecenas aliquam lectus vitae metus fermentum, ac porttitor erat elementum. Integer ac lectus eget nisi egestas pellentesque. Donec leo augue, tristique vitae diam sed, fermentum imperdiet mauris. Vivamus elementum lectus id urna tincidunt, et ullamcorper ipsum imperdiet. Donec et dui sit amet sapien vestibulum fermentum sit amet sed odio. Fusce at est tincidunt, bibendum nunc at, tincidunt lorem. Vivamus id porttitor est.</p>
-                                <p>Fusce mi nisi, porttitor at interdum in, porta nec tortor. Nunc eget risus elementum, vehicula risus laoreet, egestas metus. Phasellus vitae risus tincidunt, commodo nisl quis, egestas neque. Duis egestas turpis at libero tempor, quis interdum elit mollis. Aenean accumsan euismod rutrum. Vestibulum dictum nibh dolor, non congue leo bibendum eu. Aliquam porttitor sit amet elit porta vestibulum. Praesent sodales at turpis ac hendrerit.</p>
-                                <p>Maecenas tincidunt sit amet nisl non egestas. Cras dapibus pharetra justo ut feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan enim ut magna molestie hendrerit. Ut eu convallis tortor, a luctus dui. Morbi iaculis, nisi consectetur mollis interdum, justo lorem ultrices enim, at scelerisque magna turpis eget quam. Donec vel feugiat odio. Vestibulum tristique magna in orci tincidunt hendrerit. Suspendisse bibendum vitae est sed aliquam. Aenean ut porta massa, vel vestibulum enim. Nullam aliquam condimentum ipsum et condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc luctus blandit ex, id bibendum quam congue at. Integer accumsan est ut nisi faucibus, at lobortis risus tempor. Integer dignissim sem in dolor eleifend venenatis.</p>]]></content>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+
+<p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>]]></content>
                             </record>
                         </data>
                     </block>
                 </blocks>
             </area>
+            <area name="Page Header">
+                <blocks />
+            </area>
         </page>
-        <page name="Organization" path="/about/organization" public-date="2018-08-23 07:59:08" filename="" pagetype="" template="full" user="admin" description="" package="">
+        <page name="Search" path="/search" public-date="2018-12-18 08:31:00" filename="" pagetype="page" template="full" user="admin" description="" package="">
+            <attributes>
+                <attributekey handle="exclude_nav">
+                    <value>1</value>
+                </attributekey>
+            </attributes>
             <area name="Main">
                 <blocks>
-                    <block type="content" name="">
+                    <block mc-block-id="" />
+                    <block type="search" name="" custom-template="worldskills_search.php">
+                        <data table="btSearch">
+                            <record>
+                                <title />
+                                <buttonText><![CDATA[Search]]></buttonText>
+                                <baseSearchPath />
+                                <postTo_cID />
+                                <resultsURL />
+                            </record>
+                        </data>
+                    </block>
+                    <block type="content" name="" custom-template="worldskills_content.php">
                         <data table="btContentLocal">
                             <record>
-                                <content><![CDATA[<h2>Organization</h2>
-                                <p>
-                                  <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in elit enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean rhoncus, ligula quis condimentum eleifend, mi felis suscipit eros, ac euismod est libero at nibh. Nullam ultricies orci at volutpat lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat pretium, molestie eros cursus, interdum lectus. Maecenas ut efficitur neque.</p>
-                                  <p>Nunc non enim vitae massa pretium venenatis. Maecenas ullamcorper, justo ac consequat dictum, mi massa sodales erat, nec posuere libero elit quis quam. Vivamus in tristique elit. Pellentesque porta suscipit quam eget egestas. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc hendrerit sem eget massa tempor, nec sodales arcu tincidunt. Quisque consequat ornare vulputate. Cras facilisis finibus lacinia. Aenean sed magna sit amet neque mollis commodo nec ac urna. In nec velit nec tortor lobortis sodales vitae a turpis.</p>
-                                  <p>Vivamus laoreet dictum diam ac molestie. Etiam eu lobortis dui. Proin pellentesque tortor libero, sed tincidunt lacus pulvinar in. Sed at eros vitae purus luctus bibendum at in diam. Donec commodo tempus justo, sit amet sagittis metus eleifend condimentum. Maecenas aliquam lectus vitae metus fermentum, ac porttitor erat elementum. Integer ac lectus eget nisi egestas pellentesque. Donec leo augue, tristique vitae diam sed, fermentum imperdiet mauris. Vivamus elementum lectus id urna tincidunt, et ullamcorper ipsum imperdiet. Donec et dui sit amet sapien vestibulum fermentum sit amet sed odio. Fusce at est tincidunt, bibendum nunc at, tincidunt lorem. Vivamus id porttitor est.</p>
-                                  <p>Fusce mi nisi, porttitor at interdum in, porta nec tortor. Nunc eget risus elementum, vehicula risus laoreet, egestas metus. Phasellus vitae risus tincidunt, commodo nisl quis, egestas neque. Duis egestas turpis at libero tempor, quis interdum elit mollis. Aenean accumsan euismod rutrum. Vestibulum dictum nibh dolor, non congue leo bibendum eu. Aliquam porttitor sit amet elit porta vestibulum. Praesent sodales at turpis ac hendrerit.</p>
-                                  <p>Maecenas tincidunt sit amet nisl non egestas. Cras dapibus pharetra justo ut feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan enim ut magna molestie hendrerit. Ut eu convallis tortor, a luctus dui. Morbi iaculis, nisi consectetur mollis interdum, justo lorem ultrices enim, at scelerisque magna turpis eget quam. Donec vel feugiat odio. Vestibulum tristique magna in orci tincidunt hendrerit. Suspendisse bibendum vitae est sed aliquam. Aenean ut porta massa, vel vestibulum enim. Nullam aliquam condimentum ipsum et condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc luctus blandit ex, id bibendum quam congue at. Integer accumsan est ut nisi faucibus, at lobortis risus tempor. Integer dignissim sem in dolor eleifend venenatis.</p>]]></content>
+                                <content />
                             </record>
                         </data>
                     </block>
                 </blocks>
+            </area>
+            <area name="Page Header">
+                <blocks />
             </area>
         </page>
     </pages>
@@ -419,7 +525,7 @@
                                 <buttonText><![CDATA[Search]]></buttonText>
                                 <baseSearchPath />
                                 <postTo_cID />
-                                <resultsURL />
+                                <resultsURL><![CDATA[/search/]]></resultsURL>
                             </record>
                         </data>
                     </block>
@@ -506,8 +612,8 @@
                                 <cropImage><![CDATA[0]]></cropImage>
                                 <maxWidth><![CDATA[0]]></maxWidth>
                                 <maxHeight><![CDATA[0]]></maxHeight>
-                                <externalLink />
-                                <internalLinkCID>{ccm:export:page:}</internalLinkCID>
+                                <externalLink><![CDATA[/]]></externalLink>
+                                <internalLinkCID />
                                 <fileLinkID />
                                 <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
                                 <altText><![CDATA[WorldSkills]]></altText>
