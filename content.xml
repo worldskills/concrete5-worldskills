@@ -192,7 +192,7 @@
             </area>
             <area name="Page Header">
                 <blocks>
-                    <block type="image" name="" custom-template="worldskills_hero_overlay.php">
+                    <block type="image" name="" custom-template="worldskills_hero_overlay.php" custom-container-settings="0">
                         <data table="btContentImage">
                             <record>
                                 <fID>{ccm:export:file:skills-header.jpg}</fID>
