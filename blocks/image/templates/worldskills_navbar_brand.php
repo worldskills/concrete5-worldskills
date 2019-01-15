@@ -33,7 +33,7 @@ $c = Page::getCurrentPage();
     endif;
     ?>
 
-    <a class="navbar-brand" href="<?php echo $linkURL; ?>">
+    <a class="navbar-brand" href="<?php echo $linkURL; ?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>>
         <?php echo $tag; ?>
     </a>
 

@@ -49,7 +49,7 @@ $class = implode(' ', $classes);
 ?>
 <article class="ws-block ws-feature ws-feature-image <?=$class?>">
 <?php if ($linkURL): ?>
-    <a class="ws-feature-inner" href="<?=$linkURL?>">
+    <a class="ws-feature-inner" href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>>
 <?php else: ?>
     <div class="ws-feature-inner">
 <?php endif; ?>
