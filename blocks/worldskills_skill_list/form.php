@@ -40,6 +40,7 @@ $skillTypes = array(
     'proposed_demo' => t('Proposed Demonstration Skill'),
     'exhibition' => t('Exhibition Skill'),
     'host_member' => t('Host Member Skill'),
+    'juniors' => t('WorldSkills Juniors'),
 );
 ?>
 <div class="form-group">
