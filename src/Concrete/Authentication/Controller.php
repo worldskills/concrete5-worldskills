@@ -74,12 +74,14 @@ class Controller extends GenericOauth2TypeController
     protected function attemptAuthentication()
     {
         $extractor = $this->getExtractor();
+        $email = $extractor->getEmail();
 
-        if ($user = \UserInfo::getByEmail($extractor->getEmail())) {
-            if ($user && !$user->isError()) {
+        if ($emailUserInfo = \UserInfo::getByEmail($email)) {
+            $userId = $this->getBoundUserID($extractor->getUniqueId());
+            if ($emailUserInfo && !$emailUserInfo->isError() && $emailUserInfo->getUserID() != $userId) {
                 // A user account already exists for this email, please log in and attach from your account page.
                 // clear email
-                $user->update(array('uEmail' => ''));
+                $emailUserInfo->update(array('uEmail' => ''));
             }
         }
 
@@ -87,7 +89,9 @@ class Controller extends GenericOauth2TypeController
 
         $userInfo = \UserInfo::getByID($user->getUserID());
 
-        $extractor = $this->getExtractor();
+        // update email
+        $userInfo->update(array('uEmail' => $email));
+
         $roles = $extractor->getExtra('roles');
 
         // sync groups with roles
