@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@worldskills/bootstrap": "^4.2.0",
+    "@worldskills/bootstrap": "^4.3.0",
     "popper.js": "^1.14.4"
   },
   "scripts": {
