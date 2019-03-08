@@ -4,19 +4,12 @@ A concrete5 add-on/package that includes the WorldSkills theme for Member websit
 
 ### Installation with Composer
 
-The recommended way to install this package is to use a Composer:
+The recommended way to install both concrete5 and this package is to use a Composer. See [Composer Based Skeleton for concrete5 sites](https://github.com/concrete5/composer) for more information.
 
 ```
+composer create-project -n concrete5/composer your_project_name
+cd your_project_name
 composer require worldskills/concrete5-worldskills
-```
-
-### Alternative Installation without Composer
-
-Clone or download this repository and copy all files to `packages/worldskills/` inside your concrete5 installation.
-
-```
-cd /path/to/concrete5/
-git clone https://github.com/worldskills/concrete5-worldskills.git packages/worldskills/
 ```
 
 ### Setup
@@ -32,3 +25,12 @@ After installation do the following tasks to setup the package inside concrete5"
 ### Customization
 
 - Colours can be changed by customizing the Theme in the [Design setting](http://www.concrete5.org/documentation/using-concrete5-7/in-page-editing/the-toolbar/page-edit-drop-down/design/).
+
+### Alternative Installation without Composer (not recommended)
+
+Clone or download this repository and copy all files to `packages/worldskills/` inside your concrete5 installation.
+
+```
+cd /path/to/concrete5/
+git clone https://github.com/worldskills/concrete5-worldskills.git packages/worldskills/
+```
