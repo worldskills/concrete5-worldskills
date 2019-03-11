@@ -12142,6 +12142,10 @@ a.ws-feature-inner:hover .ws-feature-title {
   margin-top: 0.5rem;
 }
 
+.ws-layout-gray .ws-timeline-event:last-child {
+  background-color: #f7f7f7;
+}
+
 @media (min-width: 576px) {
   .ws-timeline-about {
     display: -ms-flexbox;
