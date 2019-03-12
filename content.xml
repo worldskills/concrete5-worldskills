@@ -7,6 +7,7 @@
         <pagetemplate handle="full" name="Full" icon="full.png" package="worldskills" />
         <pagetemplate handle="hero_overlay" name="Hero Overlay" icon="full_list.png" package="worldskills" />
         <pagetemplate handle="left_sidebar" name="Left Sidebar" icon="left_sidebar.png" package="worldskills" />
+        <pagetemplate handle="narrow" name="Narrow" icon="three_column.png" package="worldskills" />
     </pagetemplates>
     <thumbnailtypes>
         <thumbnailtype name="Extra Small" handle="extra_small" sizingMode="proportional" width="160" height="160" />
