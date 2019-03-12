@@ -10971,15 +10971,14 @@ a.ws-feature-inner:hover .ws-feature-title {
     width: 33.33333%;
   }
 }
-.ws-heading-article {
+.ws-heading-title {
   color: #003764;
-}
-.ws-heading-article .ws-heading-title {
   font-weight: 800;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
-.ws-heading-article .ws-heading-standfirst {
+
+.ws-heading-standfirst {
+  color: #003764;
   font-family: "Inria Serif", serif;
   font-size: 1.5em;
   font-weight: normal;
@@ -10987,7 +10986,7 @@ a.ws-feature-inner:hover .ws-feature-title {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
 }
-.ws-heading-article .ws-heading-standfirst:after {
+.ws-heading-standfirst:after {
   content: "";
   width: 158px;
   height: 1px;
@@ -11025,7 +11024,8 @@ a.ws-feature-inner:hover .ws-feature-title {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
-  .ws-heading-sub .ws-heading-title {
+
+  .ws-heading-sub-title {
     margin-bottom: 0;
   }
 

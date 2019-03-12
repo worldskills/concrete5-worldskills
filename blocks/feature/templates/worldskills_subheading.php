@@ -11,7 +11,7 @@ if ($paragraph) {
 ?>
 
 <header class="ws-heading-sub">
-    <h2 class="ws-heading-title ws-h-icon"><?=$title?></h2>
+    <h2 class="ws-heading-sub-title ws-h-icon"><?=$title?></h2>
     <?php
         if ($linkURL) {
             ?>
