@@ -47,6 +47,7 @@ class PageTheme extends Theme
            'content' => 'worldskills_content.php',
            'feature' => 'worldskills_feature_dark_blue.php',
            'image' => 'worldskills_fluid.php',
+           'page_attribute_display' => 'worldskills_content.php',
            'testimonial' => 'worldskills_pullquote.php',
            'youtube' => 'worldskills_embed.php',
            'page_list' => 'worldskills_pages.php',
@@ -61,6 +62,7 @@ class PageTheme extends Theme
             array('title' => t('Lead'), 'menuClass' => 'lead', 'spanClass' => 'lead', 'forceBlock' => 1),
             array('title' => t('Cube icon'), 'menuClass' => '', 'spanClass' => 'ws-h-icon', 'forceBlock' => 1),
             array('title' => t('Serif font'), 'menuClass' => 'text-serif', 'spanClass' => 'text-serif', 'forceBlock' => 1),
+            array('title' => t('Heading Standfirst'), 'menuClass' => 'text-serif', 'spanClass' => 'ws-heading-standfirst', 'forceBlock' => 1),
         );
     }
 }
