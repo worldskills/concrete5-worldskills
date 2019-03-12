@@ -13,7 +13,11 @@ $content = $c->getAttribute($attributeHandle);
             $src = $content->getRelativePath();
         } else {
             $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('large');
-            $src = $content->getThumbnailURL($thumbnailType->getBaseVersion());
+            if (is_object($thumbnailType)) {
+                $src = $content->getThumbnailURL($thumbnailType->getBaseVersion());
+            } else {
+                $src = $content->getRelativePath();
+            }
         }
         if (!$src) {
             $src = $content->getURL();
