@@ -23,7 +23,7 @@ $content = $c->getAttribute($attributeHandle);
             $src = $content->getURL();
         }
         ?>
-        <figure class="my-4">
+        <figure class="mb-4">
             <?php
 
             if ($linkURL) {

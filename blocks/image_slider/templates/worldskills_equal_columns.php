@@ -7,7 +7,7 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
 
 ?>
 
-<div class="ccm-image-slider-container ccm-block-image-slider-<?=$navigationTypeText; ?>" >
+<div class="ccm-image-slider-container ccm-block-image-slider-<?=$navigationTypeText; ?> mb-4">
     <div class="ccm-image-slider">
         <div class="ccm-image-slider-inner">
 

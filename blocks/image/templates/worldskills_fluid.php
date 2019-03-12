@@ -38,7 +38,7 @@ if (is_object($f) && $f->getFileID()) {
         $tag->title(h($title));
     }
 
-    echo '<figure>';
+    echo '<figure class="mb-4">';
 
     if ($linkURL) {
         echo '<a href="' . $linkURL . '" '. ($openLinkInNewWindow ? 'target="_blank"' : '') .'>';
