@@ -13,11 +13,20 @@ if (is_object($f) && $f->getFileID()) {
         $tag = new \HtmlObject\Image();
         $tag->src($thumb->src)->width($thumb->width)->height($thumb->height);
     } else {
-        $image = $app->make('html/image', [$f]);
-        $tag = $image->getTag();
+        $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('large');
+        if (is_object($thumbnailType)) {
+            $src = $f->getThumbnailURL($thumbnailType->getBaseVersion());
+        } else {
+            $src = $f->getRelativePath();
+            if (!$src) {
+                $src = $f->getURL();
+            }
+        }
+        $tag = new \HtmlObject\Image();
+        $tag->src($src);
     }
 
-    $tag->addClass('ccm-image-block img-fluid bID-' . $bID);
+    $tag->addClass('ccm-image-block figure-img img-fluid bID-' . $bID);
 
     if ($altText) {
         $tag->alt(h($altText));
@@ -28,6 +37,8 @@ if (is_object($f) && $f->getFileID()) {
     if ($title) {
         $tag->title(h($title));
     }
+
+    echo '<figure>';
 
     if ($linkURL) {
         echo '<a href="' . $linkURL . '" '. ($openLinkInNewWindow ? 'target="_blank"' : '') .'>';
@@ -47,6 +58,13 @@ if (is_object($f) && $f->getFileID()) {
     if ($linkURL) {
         echo '</a>';
     }
+
+    if ($title) {
+        echo '<figcaption class="figure-caption">' . h($title) . '</figcaption>';
+    }
+
+    echo '</figure>';
+
 } elseif ($c->isEditMode()) { ?>
     <div class="ccm-edit-mode-disabled-item"><?php echo t('Empty Image Block.'); ?></div>
 <?php
