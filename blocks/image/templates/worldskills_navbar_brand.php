@@ -21,12 +21,9 @@ $c = Page::getCurrentPage();
         $image = Core::make('html/image', array($f));
         $tag = $image->getTag();
     }
-    $tag->addClass('ccm-image-block img-fluid bID-'.$bID);
+    $tag->addClass('align-baseline img-fluid');
     if ($altText) {
         $tag->alt($altText);
-    }
-    if ($title) {
-        $tag->title($title);
     }
     if ($linkURL):
         print '<a href="' . $linkURL . '">';
@@ -35,6 +32,9 @@ $c = Page::getCurrentPage();
 
     <a class="navbar-brand" href="<?php echo $linkURL; ?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>>
         <?php echo $tag; ?>
+        <?php if ($title): ?>
+            <span class="ml-1 text-white"><?php echo h($title); ?></span>
+        <?php endif; ?>
     </a>
 
 <?php elseif ($c->isEditMode()): ?>
