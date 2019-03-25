@@ -9,19 +9,9 @@
 $user = new User;
 
 if ($user->isLoggedIn()) {
+    $ui = \UserInfo::getByID($user->getUserID());
     ?>
-    <div class="form-group">
-        <span>
-            <?php echo t('Attach a %s account', 'WorldSkills'); ?>
-        </span>
-        <hr>
-    </div>
-    <div class="form-group">
-        <a href="<?php echo \URL::to('/ccm/system/authentication/oauth2/worldskills/attempt_attach'); ?>" class="btn btn-primary btn-block">
-            <i class="fa fa-lock"></i>
-            <?php echo t('Attach a %s account', 'WorldSkills'); ?>
-        </a>
-    </div>
+    <p><?=t('Logged in as %s', $ui->getUserDisplayName());?>. </p>
 <?php
 } else {
     ?>
