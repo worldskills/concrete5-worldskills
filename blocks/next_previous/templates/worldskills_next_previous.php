@@ -31,7 +31,7 @@ if (!$previousLinkURL && !$nextLinkURL && !$parentLabel) {
     <div class="col-md-auto">
         <?php if ($nextLinkURL && $nextLinkText): ?>
             <?php if ($nextLabel): ?>
-                <h5><?php echo $nextLabel ?></h5>
+                <h5 class="text-md-right"><?php echo $nextLabel ?></h5>
             <?php endif; ?>
             <p>
                 <a class="btn btn-primary btn-more" href="<?php echo h($nextLinkURL); ?>"><?php echo h($nextLinkText); ?></a>
