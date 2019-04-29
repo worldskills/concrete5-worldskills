@@ -20,8 +20,6 @@ After installation do the following tasks to setup the package inside concrete5"
 
 2. If you want to delete all content of your website and see how the theme can be used check *Yes. Reset site content with the content found in this package*. Never do this on a real website as it deletes all your existing content.
 
-3. Go to the home page and switch to Edit Mode. Click on the block "Learning new skills can change your life" and click "Design & Custom Template". Click on the small cog icon and change "Block Container Class" to "Disable Grid Container". Click on "Save" and publish the page.
-
 ### Customization
 
 - Colours can be changed by customizing the Theme in the [Design setting](http://www.concrete5.org/documentation/using-concrete5-7/in-page-editing/the-toolbar/page-edit-drop-down/design/).
