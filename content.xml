@@ -562,7 +562,7 @@
         <stack name="Header Hero Logo" type="global_area" path="/header-hero-logo">
             <area name="Main">
                 <blocks>
-                    <block type="image" name="">
+                    <block type="image" name="" custom-template="worldskills_hero_logo.php">
                         <data table="btContentImage">
                             <record>
                                 <fID>{ccm:export:file:logo.svg}</fID>

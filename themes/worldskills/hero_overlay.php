@@ -6,6 +6,7 @@
     <div class="ws-hero-logo w-25">
         <?php
         $a = new GlobalArea('Header Hero Logo');
+        $a->setCustomTemplate('image', 'worldskills_hero_logo.php');
         $a->display($c);
         ?>
     </div>
