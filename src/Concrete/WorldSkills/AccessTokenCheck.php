@@ -31,51 +31,48 @@ class AccessTokenCheck
 
             $user = new \User();
 
-            if ($user->isLoggedIn()) {
+            if ($user->isRegistered()) {
 
-                $at = AuthenticationType::getByHandle('worldskills');
-                $controller = $at->getController();
-                $accessToken = $controller->getWorldSkillsAccessToken();
+                $lastPing = $this->session->get(self::LAST_PING_SESSION_KEY);
 
-                if ($accessToken) {
+                $now = time();
+                $diff = $now - $lastPing;
+                if ($diff > self::LAST_PING_TIMEOUT) {
 
-                    $lastPing = $this->session->get(self::LAST_PING_SESSION_KEY);
+                    $logout = false;
 
-                    $now = time();
-                    $diff = $now - $lastPing;
-                    if ($diff > self::LAST_PING_TIMEOUT) {
+                    try {
+                        $at = \Concrete\Core\Authentication\AuthenticationType::getByHandle('worldskills');
+                        $controller = $at->getController();
 
-                        $logout = false;
+                        $userId = $controller->getBindingForUser($user);
 
-                        $response = $this->auth->getLoggedInUser($accessToken);
+                        $extractor = $controller->getExtractor();
+                        $authUserId = $extractor->getUniqueId();
 
-                        // check for error
-                        if ($response->isClientError()) {
+                        if ($userId != $authUserId) {
                             $logout = true;
-                        } else {
-                            $userId = $controller->getBindingForUser($user);
-                            $authUser = json_decode($response->getBody(), true);
-                            if (!isset($authUser['id']) || $userId != $authUser['id']) {
-                                $logout = true;
-                            }
                         }
 
-                        if ($logout) {
+                    } catch (\OAuth\Common\Storage\Exception\TokenNotFoundException $e) {
+                        $logout = true;
+                    }
 
-                            // access token check failed, logout
-                            $user->unloadCollectionEdit();
-                            $user->invalidateSession();
+                    if ($logout) {
 
-                            // reload
-                            $request = \Request::getInstance();
-                            $url = Url::createFromUrl($request->getUri());
-                            $response = new RedirectResponse($url);
-                            $response->setRequest($request);
-                            $response->send();
+                        // access token check failed, logout
+                        $user->unloadCollectionEdit();
+                        $user->invalidateSession();
 
-                        } else {
-                            $this->session->set(self::LAST_PING_SESSION_KEY, $now);
-                        }
+                        // reload
+                        $request = \Request::getInstance();
+                        $url = Url::createFromUrl($request->getUri());
+                        $response = new RedirectResponse($url);
+                        $response->setRequest($request);
+                        $response->send();
+
+                    } else {
+                        $this->session->set(self::LAST_PING_SESSION_KEY, $now);
                     }
                 }
             }

@@ -11,20 +11,6 @@ class Auth
         $this->url = $url;
     }
 
-    public function getLoggedInUser($accessToken)
-    {
-        $url = $this->url . '/auth/users/loggedIn';
-
-        $client = \Core::make('http/client');
-        $client->setUri($url);
-        $client->setHeaders(array('Authorization' => 'Bearer ' . $accessToken));
-
-        // send request
-        $response = $client->send();
-
-        return $response;
-    }
-
     public function logout($accessToken)
     {
         $url = $this->url . '/auth/sessions/logout';
