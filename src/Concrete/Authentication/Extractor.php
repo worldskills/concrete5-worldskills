@@ -56,8 +56,12 @@ class Extractor extends LazyExtractor
 
     public function profileLoader()
     {
+        $appCode = \Config::get('auth.worldskills.roles_application_code');
+
         $uri = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/auth/users/loggedIn';
+
         $uriParsed = new Uri($uri);
+        $uriParsed->addToQuery('app_code', $appCode);
 
         return json_decode($this->service->request($uriParsed), true);
     }
