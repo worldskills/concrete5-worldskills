@@ -54,25 +54,25 @@ class AccessTokenCheck
                             $logout = true;
                         }
 
+                        if ($logout) {
+
+                            // access token check failed, logout
+                            $user->unloadCollectionEdit();
+                            $user->invalidateSession();
+
+                            // reload
+                            $request = \Request::getInstance();
+                            $url = Url::createFromUrl($request->getUri());
+                            $response = new RedirectResponse($url);
+                            $response->setRequest($request);
+                            $response->send();
+
+                        } else {
+                            $this->session->set(self::LAST_PING_SESSION_KEY, $now);
+                        }
+
                     } catch (\OAuth\Common\Storage\Exception\TokenNotFoundException $e) {
-                        $logout = true;
-                    }
-
-                    if ($logout) {
-
-                        // access token check failed, logout
-                        $user->unloadCollectionEdit();
-                        $user->invalidateSession();
-
-                        // reload
-                        $request = \Request::getInstance();
-                        $url = Url::createFromUrl($request->getUri());
-                        $response = new RedirectResponse($url);
-                        $response->setRequest($request);
-                        $response->send();
-
-                    } else {
-                        $this->session->set(self::LAST_PING_SESSION_KEY, $now);
+                        // ignore, most likely not using OAuth
                     }
                 }
             }
