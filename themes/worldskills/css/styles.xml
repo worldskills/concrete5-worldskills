@@ -44,4 +44,9 @@
         <style name="Cube 2 Left" variable="hero-bullet2-left" type="color" />
         <style name="Cube 2 Right" variable="hero-bullet2-right" type="color" />
     </set>
+    <set name="Timeline">
+        <style name="Timeline" variable="timeline" type="color" />
+        <style name="Timeline Background" variable="timeline-background" type="color" />
+        <style name="Timeline Active" variable="timeline-active" type="color" />
+    </set>
 </styles>
