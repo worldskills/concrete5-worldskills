@@ -59,6 +59,7 @@
 
 <?php echo $html->javascript($this->getThemePath() . '/js/popper.js/popper.min.js'); ?>
 <?php echo $html->javascript($this->getThemePath() . '/js/bootstrap/bootstrap.min.js'); ?>
+<?php echo $html->javascript($this->getThemePath() . '/js/polyfill/popover.js'); ?>
 
 </body>
 </html>
