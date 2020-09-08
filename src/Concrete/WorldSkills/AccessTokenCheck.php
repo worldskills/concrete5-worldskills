@@ -45,7 +45,8 @@ class AccessTokenCheck
                         $at = \Concrete\Core\Authentication\AuthenticationType::getByHandle('worldskills');
                         $controller = $at->getController();
 
-                        $userId = $controller->getBindingForUser($user);
+                        $uID = $user->getUserID();
+                        $userId = $controller->getBindingForUser($uID);
 
                         $extractor = $controller->getExtractor();
                         $authUserId = $extractor->getUniqueId();
