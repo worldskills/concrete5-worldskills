@@ -22,7 +22,7 @@ $nh = \Loader::helper('navigation');
                 <div class="ws-blockgrid-block" aria-hidden="true">
                     <div class="ws-blockgrid-block-content">
                         <?php if (isset($member['flag']) && $member['flag']): ?>
-                            <a class="ws-blockgrid-block-link" href="<?php echo h($url) ?>"><img src="<?php echo h($member["flag"]["thumbnail"]); ?>_small" alt="<?php echo h($member["name"]["text"]); ?> flag"></a>
+                            <a class="ws-blockgrid-block-link ws-blockgrid-block-flag" href="<?php echo h($url) ?>"><img src="<?php echo h($member["flag"]["thumbnail"]); ?>_small" alt="<?php echo h($member["name"]["text"]); ?> flag"></a>
                         <?php endif; ?>
                     </div>
                 </div>
