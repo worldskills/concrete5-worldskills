@@ -22,6 +22,8 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
 
         $description = $th->entities($description);
 
+        $date = $page->getCollectionDatePublicObject()->format('j F Y');
+
         $src = null;
         $f = $page->getAttribute('thumbnail');
         if (is_object($f)) {
@@ -51,7 +53,12 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
                     <?php echo $title ?>
                 </h1>
             </a>
-            <p class="ws-imglink-desc"><?php echo $description ?></p>
+            <?php if (isset($includeDate) && $includeDate): ?>
+                <p class="ws-imglink-desc"><?php echo h($date); ?></p>
+            <?php endif; ?>
+            <?php if (isset($includeDescription) && $includeDescription): ?>
+                <p class="ws-imglink-desc"><?php echo h($description); ?></p>
+            <?php endif; ?>
         </li>
 
     <?php endforeach; ?>
