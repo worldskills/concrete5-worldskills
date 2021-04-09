@@ -3,7 +3,21 @@ defined('C5_EXECUTE') or die("Access Denied.");
 $th = Loader::helper('text');
 
 $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('landscape');
+
+$app = \Concrete\Core\Support\Facade\Application::getFacadeApplication();
+$canonical = $app->make(Concrete\Core\Url\SeoCanonical::class);
+$tag = $canonical->getPathArguments()[1];
 ?>
+
+<?php if (isset($pageListTitle) && $pageListTitle) { ?>
+    <h1 class="ws-h-icon h2"><?php
+        echo h($pageListTitle);
+        if (isset($tag) && $tag) {
+            echo ' — ' . h($tag);
+        }
+        ?>
+    </h1>
+<?php } ?>
 
 <ul class="ws-linklist">
 
@@ -39,7 +53,7 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
             <div class="ws-linklist-body">
                 <h2 class="ws-linklist-title">
                     <a href="<?php echo $url ?>">
-                        <?=$title;?>
+                        <?= $title; ?>
                     </a>
                 </h2>
                 <?php if ($description): ?>
