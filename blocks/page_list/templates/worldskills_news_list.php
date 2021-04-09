@@ -3,7 +3,17 @@ defined('C5_EXECUTE') or die("Access Denied.");
 $th = Loader::helper('text');
 
 $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('landscape');
+
+$app = \Concrete\Core\Support\Facade\Application::getFacadeApplication();
+$canonical = $app->make(Concrete\Core\Url\SeoCanonical::class);
+$tag = $canonical->getPathArguments()[1];
 ?>
+
+<h1 class="ws-h-icon h2"><?php
+    if (isset($pageListTitle) && $pageListTitle) echo h($pageListTitle); else echo 'News';
+    if ($tag != '') echo ' — ';
+    echo $tag; ?>
+</h1>
 
 <ul class="ws-linklist">
 
