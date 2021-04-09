@@ -9,11 +9,15 @@ $canonical = $app->make(Concrete\Core\Url\SeoCanonical::class);
 $tag = $canonical->getPathArguments()[1];
 ?>
 
-<h1 class="ws-h-icon h2"><?php
-    if (isset($pageListTitle) && $pageListTitle) echo h($pageListTitle); else echo 'News';
-    if (isset($tag) && $tag) echo ' — ';
-    echo $tag; ?>
-</h1>
+<?php if (isset($pageListTitle) && $pageListTitle) { ?>
+    <h1 class="ws-h-icon h2"><?php
+        echo h($pageListTitle);
+        if (isset($tag) && $tag) {
+            echo ' — ' . h($tag);
+        }
+        ?>
+    </h1>
+<?php } ?>
 
 <ul class="ws-linklist">
 
@@ -49,7 +53,7 @@ $tag = $canonical->getPathArguments()[1];
             <div class="ws-linklist-body">
                 <h2 class="ws-linklist-title">
                     <a href="<?php echo $url ?>">
-                        <?=$title;?>
+                        <?= $title; ?>
                     </a>
                 </h2>
                 <?php if ($description): ?>
