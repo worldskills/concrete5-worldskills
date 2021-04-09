@@ -11,7 +11,7 @@ $tag = $canonical->getPathArguments()[1];
 
 <h1 class="ws-h-icon h2"><?php
     if (isset($pageListTitle) && $pageListTitle) echo h($pageListTitle); else echo 'News';
-    if ($tag != '') echo ' — ';
+    if (isset($tag) && $tag) echo ' — ';
     echo $tag; ?>
 </h1>
 
