@@ -53,11 +53,11 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('lan
                     <?php echo $title ?>
                 </h1>
             </a>
-            <?php if (isset($includeDate) && $includeDate): ?>
-                <p class="ws-imglink-desc"><?php echo h($date); ?></p>
-            <?php endif; ?>
             <?php if (isset($includeDescription) && $includeDescription): ?>
                 <p class="ws-imglink-desc"><?php echo h($description); ?></p>
+            <?php endif; ?>
+            <?php if (isset($includeDate) && $includeDate): ?>
+                <p class="ws-imglink-date"><?php echo h($date); ?></p>
             <?php endif; ?>
         </li>
 
