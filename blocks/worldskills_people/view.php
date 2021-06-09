@@ -5,6 +5,25 @@
         <?php foreach ($people as $i => $person): ?>
             <?php
 
+            // Get image
+            $personImage = null;
+            foreach ($person['images'] as $image)
+            {
+                if ($image['type'] == 'TEAM')
+                {
+                    $personImage = $image;
+                    break;
+                }
+            }
+            if ($personImage == null)
+            {
+                // Try to get last image
+                foreach ($person['images'] as $image)
+                {
+                    $personImage = $image;
+                }
+            }
+
             // Get the member
             $position = null;
 
@@ -33,8 +52,8 @@
             ?>
             <li class="ws-imglist-item col-sm-3 col-6">
                 <span class="ws-imglist-img-wrapper"<?php if ($flag) { echo ' style="background-image: url(' . h($flag) . ')"'; } ?>>
-                    <?php if (isset($person['images'][0])): ?>
-                        <img src="<?php echo h($person['images'][0]['thumbnail']); ?>_portrait" class="ws-imglist-img" alt="Photo of <?=h($person['first_name'])?> <?=h($person['last_name'])?>">
+                    <?php if ($personImage): ?>
+                        <img src="<?php echo h($personImage['thumbnail']); ?>_portrait" class="ws-imglist-img" alt="Photo of <?=h($person['first_name'])?> <?=h($person['last_name'])?>">
                     <?php else: ?>
                         <img src="https://people.worldskills.org/images/user_portrait.png" class="ws-imglist-img" alt="">
                     <?php endif; ?>
