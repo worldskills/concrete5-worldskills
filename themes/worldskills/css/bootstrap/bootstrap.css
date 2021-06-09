@@ -11723,6 +11723,10 @@ a.ws-feature-inner:hover .ws-feature-title {
 .ws-imglink {
   margin-bottom: 20px;
   padding-bottom: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
 }
 .ws-imglink:before {
   content: "";
@@ -11763,12 +11767,17 @@ a.ws-feature-inner:hover .ws-feature-title {
   margin: 0 20px;
 }
 
+.ws-imglink-date {
+  margin: auto 20px 0;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .ws-imglink-title {
     font-size: 1rem;
   }
 
-  .ws-imglink-desc {
+  .ws-imglink-desc,
+.ws-imglink-date {
     font-size: 0.875rem;
   }
 }
