@@ -28,12 +28,19 @@ $tag = $canonical->getPathArguments()[1];
         $title = $th->entities($page->getCollectionName());
 
         $url = $nh->getLinkToCollection($page);
+        $target = '_self';
 
         $description = $page->getCollectionDescription();
 
         $date = $page->getCollectionDatePublicObject()->format('j F Y');
 
         $thumbnail = $page->getAttribute('thumbnail');
+
+        $urlRedirect = $page->getAttribute('url_redirect');
+        if ($urlRedirect) {
+            $url = $urlRedirect;
+            $target = '_blank';
+        }
         ?>
 
         <li class="ws-linklist-item">
@@ -52,7 +59,7 @@ $tag = $canonical->getPathArguments()[1];
             <?php endif; ?>
             <div class="ws-linklist-body">
                 <h2 class="ws-linklist-title">
-                    <a href="<?php echo $url ?>">
+                    <a href="<?php echo $url ?>" target="<?php echo $target; ?>">
                         <?= $title; ?>
                     </a>
                 </h2>

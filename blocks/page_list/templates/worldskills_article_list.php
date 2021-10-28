@@ -12,13 +12,20 @@ $th = Loader::helper('text');
         $title = $th->entities($page->getCollectionName());
 
         $url = $nh->getLinkToCollection($page);
+        $target = '_self';
 
         $date = $page->getCollectionDatePublicObject()->format('j F Y');
+
+        $urlRedirect = $page->getAttribute('url_redirect');
+        if ($urlRedirect) {
+            $url = $urlRedirect;
+            $target = '_blank';
+        }
         ?>
 
         <li class="ws-linklist-item">
             <h2 class="ws-linklist-title">
-                <a href="<?php echo $url ?>">
+                <a href="<?php echo $url ?>" target="<?php echo $target; ?>">
                     <?=$title;?>
                 </a>
             </h2>
