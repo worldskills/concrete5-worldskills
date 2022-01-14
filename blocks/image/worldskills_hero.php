@@ -55,7 +55,7 @@ $class = implode(' ', $classes);
     }
     if ($linkURL) {
     ?>
-        <a class="btn btn-more <?=$button_class?>" href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>>Learn more</a>
+        <a class="btn btn-more <?=$button_class?>" title="<?php echo h($title); ?>" href="<?=$linkURL?>"<?php echo ($openLinkInNewWindow ? ' target="_blank"' : ''); ?>>Learn more</a>
     <?php
     }
     ?>
