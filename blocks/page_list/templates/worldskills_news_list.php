@@ -55,7 +55,7 @@ $tag = $canonical->getPathArguments()[1];
                     }
                 }
                 ?>
-                <img class="ws-linklist-thumb" src="<?php echo $src ?>" alt="">
+                <img class="ws-linklist-thumb" src="<?php echo $src ?>" alt="<?php echo h($title); ?>">
             <?php endif; ?>
             <div class="ws-linklist-body">
                 <h2 class="ws-linklist-title">
