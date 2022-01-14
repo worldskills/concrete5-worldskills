@@ -74,7 +74,7 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('ext
                                 </span>
                             <?php else: ?>
                                 <a class="ws-timeline-thumb" href="<?=$url?>">
-                                    <img src="<?=$thumbnail?>" alt="" />
+                                    <img src="<?=$thumbnail?>" alt="<?php echo h($title); ?>" />
                                 </a>
                             <?php endif; ?>
                         <?php endif; ?>
