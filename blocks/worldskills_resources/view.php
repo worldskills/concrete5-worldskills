@@ -16,7 +16,7 @@
         ?>
 
         <?php if ($download): ?>
-            <p><a href="<?php echo h($download); ?>" target="_blank"><?php echo h($resource['name']['text']); ?></a></p>
+            <p><a href="<?php echo h($download); ?>" target="_blank" rel="noopener"><?php echo h($resource['name']['text']); ?></a></p>
         <?php endif; ?>
 
     <?php endforeach; ?>
@@ -69,7 +69,7 @@
                         ?>
 
                         <?php if ($download): ?>
-                            <p><a href="<?php echo h($download); ?>" target="_blank"><?php echo h($resource['name']['text']); ?></a></p>
+                            <p><a href="<?php echo h($download); ?>" target="_blank" rel="noopener"><?php echo h($resource['name']['text']); ?></a></p>
                         <?php endif; ?>
                     <?php endif; ?>
 
