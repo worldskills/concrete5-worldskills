@@ -156,7 +156,7 @@ class Controller extends Package
         }
 
         $page = \SinglePage::add('/dashboard/system/basics/worldskills', $pkg);
-        if (is_object($pag)) {
+        if (is_object($page)) {
             $page->updateCollectionName('WorldSkills');
         }
 
