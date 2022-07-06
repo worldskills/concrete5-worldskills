@@ -22,7 +22,7 @@ $nh = \Loader::helper('navigation');
                     <a href="<?php echo h($url); ?>">
                 <?php endif; ?>
                 <?php foreach ($skill['photos'] as $photo): ?>
-                    <img src="<?php echo h($photo['thumbnail']); ?>_small" class="ws-imglink-img" alt="">
+                    <img src="<?php echo h($photo['thumbnail']); ?>_landscape_small" class="ws-imglink-img" alt="">
                     <?php break; ?>
                 <?php endforeach; ?>
                 <h1 class="ws-imglink-title">
