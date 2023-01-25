@@ -17,6 +17,12 @@
 
     <div class="<?php echo $c->getPageWrapperClass()?>">
 
+        <?php
+        $a = new GlobalArea('Header Notice');
+        $a->disableControls();
+        $a->display();
+        ?>
+
         <nav class="navbar navbar-expand-md ws-navbar-main ws-navbar-stripe">
             <div class="container">
                 <?php
