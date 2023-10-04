@@ -50,7 +50,7 @@ $thumbnailType = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('ext
         }
 
         $isActive = False;
-        if ($page->getAttribute('is_featured') || $page->getCollectionID() == $c->getCollectionID()) {
+        if ($page->getAttribute('is_featured') || strpos($c->getCollectionPath(), $page->getCollectionPath()) === 0) {
             $isActive = True;
         }
         ?>
