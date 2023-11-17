@@ -8,7 +8,11 @@ class Controller extends BlockController
 {
     const BASE_POSITION_COMPETITOR = 'Competitor';
 
+    const BASE_POSITION_COMPETITOR_ID = 4;
+
     const BASE_POSITION_EXPERT = 'Expert';
+
+    const BASE_POSITION_EXPERT_ID = 1;
 
     protected $btTable = 'btWorldSkillsPeople';
     protected $btInterfaceWidth = 400;
@@ -110,16 +114,16 @@ class Controller extends BlockController
     public function getPeople($params)
     {
         $uh = \Core::make('helper/url');
-        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/people';
+        $url = \Config::get('worldskills.api_url', 'https://api.worldskills.org') . '/people/public';
 
         // Competitors resource
         if ($this->typeFilter == 'competitors') {
-            $url .= '/competitors';
+            $params['base_position'] = self::BASE_POSITION_COMPETITOR_ID;
         }
 
         // Experts resource
         if ($this->typeFilter == 'experts') {
-            $url .= '/experts';
+            $params['base_position'] = self::BASE_POSITION_EXPERT_ID;
         }
 
         // build URL with params
