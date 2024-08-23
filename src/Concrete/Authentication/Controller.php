@@ -4,6 +4,7 @@ namespace Concrete\Package\Worldskills\Authentication;
 
 use Concrete\Core\Authentication\Type\OAuth\OAuth2\GenericOauth2TypeController;
 use Concrete\Core\User\User;
+use Concrete\Core\Routing\RedirectResponse;
 
 class Controller extends GenericOauth2TypeController
 {
@@ -41,6 +42,24 @@ class Controller extends GenericOauth2TypeController
         \Config::save('auth.worldskills.secret', $args['apisecret']);
         \Config::save('auth.worldskills.roles_application_code', $args['roles_application_code']);
         \Config::save('auth.worldskills.registration.group', intval($args['registration_group'], 10));
+    }
+
+    /**
+     * @override
+     */
+    public function handle_authentication_callback()
+    {
+        // parent handle_authentication_callback redirects to an error page if user is already logged in,
+        // override the behavior and simply let the logged in user continue
+        $user = $this->app->make(User::class);
+        if ($user && !$user->isError() && $user->isLoggedIn()) {
+            return new RedirectResponse(
+                $this->app->make('url/manager')->resolve(['/login', 'login_complete'])
+            );
+        }
+
+        // still use parent handle_authentication_callback for all other cases
+        return parent::handle_authentication_callback();
     }
 
     public function edit()
